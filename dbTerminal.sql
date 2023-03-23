@@ -279,7 +279,7 @@ SELECT * FROM term.tbClientes
 GO
 
 
-CREATE OR ALTER VIEW term.VW_tbClientes_All
+CREATE OR ALTER VIEW term.VW_tbClientes
 AS
 SELECT	clie_ID, 
 		clie_Nombres, 
