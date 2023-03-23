@@ -1,0 +1,89 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "DbterminalContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Context",
+   "ProjectRootNamespace": "PruebaApi.DataAccess",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 1,
+   "Tables": [
+      {
+         "Name": "[acce].[tbPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[acce].[tbRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[acce].[tbRolesXPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[acce].[tbUsuarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[tbDepartamentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[tbEstadosCiviles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[tbMetodosPago]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[tbMunicipios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbCargos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbClientes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbCompania]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbEmpleados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbHorarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbTerminales]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "DESKTOP-E6OAL4S\\SERVIDORLOCALDM.dbTerminal",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

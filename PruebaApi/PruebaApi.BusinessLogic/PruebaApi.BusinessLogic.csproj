@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PruebaApi.DataAccess\PruebaApi.DataAccess.csproj" />
+    <ProjectReference Include="..\PruebaApi.Entities\PruebaApi.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
