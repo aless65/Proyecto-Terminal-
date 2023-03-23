@@ -273,7 +273,7 @@ GO
 
 
 -- por mostrar en proyecto final 
---cargos , boletos, pasajeros, horarios, terminales
+--cargos , boletos, clientes, horarios, terminales
 
 SELECT * FROM term.tbClientes
 GO
