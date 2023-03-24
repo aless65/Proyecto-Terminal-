@@ -1,4 +1,5 @@
-﻿using PruebaApi.DataAccess.Repository;
+﻿using PruebaApi.DataAccess;
+using PruebaApi.DataAccess.Repository;
 using PruebaApi.Entities.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,29 @@ namespace PruebaApi.BusinessLogic.Services
         {
             _tbClientesRepository = tbClientesRepository;
         }
+        public ServiceResult InsertarCliente(tbClientes item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var map = _tbClientesRepository.Insert(item);
+                if (map.CodeStatus > 0)
+                {
+                    return result.Ok(map);
+                }
+                else
+                {
+                    map.MessageStatus = (map.CodeStatus == 0) ? "404 Error de consulta" : map.MessageStatus;
+                    return result.Error(map);
+                }
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         #region Clientes
         public IEnumerable<VW_tbClientes> ListadoClientes()
         {

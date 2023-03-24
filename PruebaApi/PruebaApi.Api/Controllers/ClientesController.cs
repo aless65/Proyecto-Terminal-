@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http;
+using PruebaApi.Entities.Entities;
 
 namespace PruebaApi.Api.Controllers
 {
@@ -28,6 +29,13 @@ namespace PruebaApi.Api.Controllers
         public IActionResult Listado()
         {
             var listado = _TermService.ListadoClientes();
+            return Ok(listado);
+        }
+
+        [HttpPost]
+        public IActionResult Create(tbClientes item)
+        {
+            var listado = _TermService.InsertarCliente(item);
             return Ok(listado);
         }
     }
