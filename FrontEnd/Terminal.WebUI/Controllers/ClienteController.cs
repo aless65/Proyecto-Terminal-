@@ -64,7 +64,62 @@ namespace Terminal.WebUI.Controllers
                 }
             }
         }
-      
+        public async Task<IActionResult> Edit(int id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(_baseurl + $"api/Cliente/Cliente/Find/{id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var cliente = JsonConvert.DeserializeObject<ClientesModel>(content);
+                    return View(cliente);
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+        }
+
+
+        public async Task<IActionResult> Update(ClientesModel cliente)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json");
+                var response = await httpClient.PutAsync(_baseurl + $"api/Cliente/Cliente/Update/{cliente.clie_ID}", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.PostAsync(_baseurl + $"api/Cliente/Cliente/Delete/{id}", null);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+        }
+
+
     }
 
 }

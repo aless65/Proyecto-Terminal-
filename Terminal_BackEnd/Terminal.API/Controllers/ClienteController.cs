@@ -40,5 +40,27 @@ namespace Terminal.API.Controllers
             return Ok(listado);
         }
 
+        [HttpGet("Cliente/Find/{id}")]
+        public IActionResult Edit(int id)
+        {
+            var listado = _terminalService.BuscarCliente(id);
+            return Ok(listado);
+        }
+
+        [HttpPut("Cliente/Update/{id}")]
+        public IActionResult Edit(ClientesViewModel clientesViewModel)
+        {
+            var listado = _mapper.Map<tbClientes>(clientesViewModel);
+            var Result = _terminalService.UpdateCliente(listado);
+            return Ok(Result);
+        }
+
+        [HttpPost("Cliente/Delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            var listado = _terminalService.BorrarCliente(id);
+            return Ok();
+        }
+
     }
 }

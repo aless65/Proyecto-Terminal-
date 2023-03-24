@@ -53,7 +53,41 @@ namespace Terminal.BusinessLogic.Services
                 throw;
             }
         }
+        public VW_tbClientes BuscarCliente(int id)
+        {
+            try
+            {
+                return _clientesRepository.Find(id);
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
 
+        public RequestStatus BorrarCliente(int id)
+        {
+            try
+            {
+                return _clientesRepository.Delete(id);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public RequestStatus UpdateCliente(tbClientes clientes)
+        {
+            try
+            {
+                return _clientesRepository.Update(clientes);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
         #endregion
 
     }
