@@ -423,5 +423,143 @@ GO
 
 
 /*###############  tbBoletos  ###############*/
-	
 
+--------> VIEW	
+CREATE OR ALTER VIEW term.VW_tbBoletos
+AS
+	SELECT	bole_ID, 
+			bole_Fecha,
+			bole.term_ID,
+			term.term_Nombre,
+			term.term_DireccionExacta,
+			bole.comp_ID,
+			comp.comp_Nombre,
+			comp.comp_Direccion,
+			bole.empl_ID,
+			empl.empl_PrimerNombre,
+			empl.empl_SegundoNombre,
+			empl.empl_PrimerApellido,
+			empl.empl_SegundoApellido,
+			CONCAT(empl_PrimerNombre, ' ', empl_SegundoNombre, ' ', empl_PrimerApellido , ' ', empl_SegundoApellido) AS bole_empl_Nombre_Completo,
+			bole.clie_ID,
+			clie.clie_Nombres,
+			clie.clie_Apellidos,
+			CONCAT(clie_Nombres, ' ', clie_Apellidos) AS bole_clie_Nombre_Completo,
+			clie.clie_Sexo,
+			bole.hora_ID,
+			hora.hora_FechaSalida,
+			hora.hora_Origen,
+			hora.hora_FechaLlegada,
+			hora.hora_Destino,
+			bole.pago_ID,
+			pago.pago_Descripcion,
+			bole_Precio
+			bole_Estado,
+			bole_UsuarioCreador,
+			usr1.usua_Usuario AS bole_UsuarioCreador_Nombre,
+			bole_FechaCreacion,
+			bole_UsuarioModificador,
+			usr2.usua_Usuario AS bole_UsuarioModificador_Nombre,
+			bole_FechaModificacion
+
+	FROM term.tbBoletos AS bole INNER JOIN term.tbTerminales AS term
+	ON bole.term_ID = term.term_ID INNER JOIN term.tbCompania AS comp
+	ON bole.comp_ID = comp.comp_ID INNER JOIN term.tbEmpleados AS empl
+	ON bole.empl_ID = empl.empl_ID INNER JOIN term.tbClientes AS clie
+	ON bole.clie_ID = clie.clie_ID INNER JOIN term.tbHorarios AS hora
+	ON bole.hora_ID = hora.hora_ID INNER JOIN gral.tbMetodosPago AS pago
+	ON bole.pago_ID = pago.pago_ID INNER JOIN acce.tbUsuarios AS usr1
+	ON bole.bole_UsuarioCreador = usr1.usua_ID LEFT JOIN acce.tbUsuarios AS usr2
+	ON bole.bole_UsuarioModificador = usr2.usua_ID
+GO
+
+
+--------> READ
+CREATE OR ALTER PROCEDURE term.UDP_VW_tbBoletos_VW
+AS
+BEGIN
+	SELECT * FROM term.VW_tbBoletos WHERE bole_Estado = 1
+END
+GO
+
+--------> CREATE	
+CREATE OR ALTER PROCEDURE term.UDP_tbBoletos_Create
+	@bole_UsuarioCreador	INT,
+	@bole_Fecha				DATETIME,
+	@term_ID				INT,
+	@comp_ID				INT,
+	@empl_ID				INT,
+	@clie_ID				INT,
+	@hora_ID				INT,
+	@pago_ID				INT,
+	@bole_Precio			NUMERIC(18,2)
+AS
+BEGIN 
+	BEGIN TRY
+		INSERT INTO term.tbBoletos (bole_Fecha, term_ID, comp_ID, empl_ID, clie_ID, hora_ID, pago_ID,
+					bole_Precio, bole_UsuarioCreador, bole_UsuarioModificador, bole_FechaModificacion)
+		VALUES (@bole_Fecha, @term_ID, @comp_ID, @empl_ID, @clie_ID, @hora_ID, @pago_ID, @bole_Precio,
+				@bole_UsuarioCreador, NULL, NULL)
+		SELECT 1
+	END TRY
+	BEGIN CATCH
+		SELECT 0
+	END CATCH 
+END
+GO
+
+
+--------> UPDATE	
+CREATE OR ALTER PROCEDURE term.UDP_tbBoletos_Update
+	@bole_UsuarioModificador	INT,
+	@bole_ID					INT ,
+	@bole_Fecha					DATETIME,
+	@term_ID					INT,
+	@comp_ID					INT,
+	@empl_ID					INT,
+	@clie_ID					INT,
+	@hora_ID					INT,
+	@pago_ID					INT,
+	@bole_Precio				NUMERIC(18,2)
+AS
+BEGIN 
+	BEGIN TRY
+
+		UPDATE term.tbBoletos 
+		SET bole_Fecha = @bole_Fecha, 
+		term_ID = @term_ID, 
+		comp_ID = @comp_ID, 
+		empl_ID = @empl_ID, 
+		clie_ID = @clie_ID, 
+		hora_ID = @hora_ID, 
+		pago_ID = @pago_ID,
+		bole_Precio = @bole_Precio,  
+		bole_UsuarioModificador = @bole_UsuarioModificador, 
+		bole_FechaModificacion = GETDATE()
+		WHERE bole_ID = @bole_ID
+		SELECT 1
+	END TRY 
+	BEGIN CATCH
+		SELECT 0
+	END CATCH
+END
+GO
+
+
+
+--------> DELETE	
+CREATE OR ALTER PROCEDURE term.UDP_tbBoletos_Delete
+	@bole_ID				INT
+AS
+BEGIN 
+	BEGIN TRY
+		UPDATE term.tbBoletos
+		SET bole_Estado = 0
+		WHERE bole_ID = @bole_ID
+		SELECT 1
+	END TRY
+	BEGIN CATCH 
+		SELECT 0
+	END CATCH
+END
+GO

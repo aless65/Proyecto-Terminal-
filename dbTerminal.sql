@@ -273,7 +273,7 @@ CREATE TABLE term.tbHorarios(
 GO
 
 
-
+-- CREACION DE TABLA tbBoletos
 CREATE TABLE term.tbBoletos(
 	bole_ID						INT IDENTITY(1,1),
 	bole_Fecha					DATETIME DEFAULT GETDATE(),
@@ -286,7 +286,7 @@ CREATE TABLE term.tbBoletos(
 	bole_Precio					NUMERIC(18,2),
 	bole_Estado					INT DEFAULT 1,
 	bole_UsuarioCreador			INT,
-	bole_FechaCreacion			DATETIME,
+	bole_FechaCreacion			DATETIME DEFAULT GETDATE(),
 	bole_UsuarioModificador		INT,
 	bole_FechaModificacion		DATETIME,
 
