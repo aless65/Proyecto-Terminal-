@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Terminal.WebUI.Models.ClientesModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_Nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_Apellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_DNI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_Sexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_UsuarioCreador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_FechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_UsuarioModificador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clie_FechaModificacion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_DNI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_UsuarioCreador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_FechaCreacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_UsuarioModificador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clie_FechaModificacion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

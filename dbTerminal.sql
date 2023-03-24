@@ -269,34 +269,9 @@ CREATE TABLE term.tbHorarios(
 )
 GO
 
-
-
-
 -- por mostrar en proyecto final 
 --cargos , boletos, clientes, horarios, terminales
 
-SELECT * FROM term.tbClientes
-GO
-
-
-CREATE OR ALTER VIEW term.VW_tbClientes
-AS
-SELECT	clie_ID, 
-		clie_Nombres, 
-		clie_Apellidos,
-		CONCAT(clie_Nombres,  ' ', clie_Apellidos) AS clie_NombreCompleto,
-		clie_DNI,
-		clie_Telefono,
-		clie_Email,		
-		clie_Estado,
-		clie_UsuarioCreador,usr1.usua_Usuario AS clie_UsuarioCreador_Nombre,
-		clie_FechaCreacion,
-		clie_UsuarioModificador, usr2.usua_Usuario AS clie_UsuarioModificador_Nombre,
-		clie_FechaModificacion
-
-FROM term.tbClientes AS clie INNER JOIN acce.tbUsuarios AS usr1
-ON clie.clie_UsuarioCreador = usr1.usua_ID LEFT JOIN acce.tbUsuarios AS usr2
-ON clie.clie_UsuarioModificador = usr2.usua_ID
 
 
 

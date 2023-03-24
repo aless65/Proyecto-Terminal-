@@ -97,10 +97,40 @@ GO
 
 
 
-/*###############  tbPasajeros  ###############*/
+/*###############  tbClientes  ###############*/
+--------> VIEW
+GO
+CREATE OR ALTER VIEW term.VW_tbClientes
+AS
+SELECT	clie_ID, 
+		clie_Nombres, 
+		clie_Apellidos,
+		CONCAT(clie_Nombres,  ' ', clie_Apellidos) AS clie_NombreCompleto,
+		clie_DNI,
+		clie_Telefono,
+		clie_Email,		
+		clie_Estado,
+		clie_UsuarioCreador,usr1.usua_Usuario AS clie_UsuarioCreador_Nombre,
+		clie_FechaCreacion,
+		clie_UsuarioModificador, usr2.usua_Usuario AS clie_UsuarioModificador_Nombre,
+		clie_FechaModificacion
+
+FROM term.tbClientes AS clie LEFT JOIN acce.tbUsuarios AS usr1
+ON clie.clie_UsuarioCreador = usr1.usua_ID LEFT JOIN acce.tbUsuarios AS usr2
+ON clie.clie_UsuarioModificador = usr2.usua_ID
+
+-------->   LIST
+
+GO
+CREATE OR ALTER PROCEDURE term.UDP_VW_tbClientes_VW
+AS
+BEGIN
+	SELECT * FROM term.VW_tbClientes WHERE clie_Estado = 1
+END
 
 -------->	CREATE	
-CREATE OR ALTER PROCEDURE term.UDP_tbPasajeros_Create
+GO
+CREATE OR ALTER PROCEDURE term.UDP_tbClientes_Create
 	@clie_UsuarioCreador		INT,
 	@clie_Nombres				NVARCHAR(100),
 	@clie_Apellidos				NVARCHAR(100),
@@ -124,7 +154,7 @@ END
 GO
 
 -------->	UPDATE	
-CREATE OR ALTER PROCEDURE term.UDP_tbPasajeros_Update
+CREATE OR ALTER PROCEDURE term.UDP_tbClientes_Update
 	@clie_UsuarioModificador	INT,
 	@clie_ID					INT,
 	@clie_Nombres				NVARCHAR(100),
@@ -155,7 +185,7 @@ END
 GO
 
 -------->	DELETE	
-CREATE OR ALTER PROCEDURE term.UDP_tbPasajeros_Delete
+CREATE OR ALTER PROCEDURE term.UDP_tbClientes_Delete
 @clie_ID INT
 AS
 BEGIN
@@ -315,12 +345,12 @@ CREATE OR ALTER PROCEDURE term.UDP_tbItinerarios_Create
 	@hora_FechaSalida			DATETIME,
 	@hora_FechaLlegada			DATETIME,
 	@tran_ID					INT,
-	@hora_CantidadPasajeros		INT
+	@hora_CantidadClientes		INT
 AS
 BEGIN
-	INSERT INTO term.tbHorarios(hora_FechaSalida, hora_FechaLlegada, hora_CantidadPasajeros,
+	INSERT INTO term.tbHorarios(hora_FechaSalida, hora_FechaLlegada, hora_CantidadClientes,
 									hora_UsuarioCreador, hora_UsuarioModificador, hora_FechaModificacion)
-	VALUES(@hora_FechaSalida, @hora_FechaLlegada, @tran_ID, @hora_CantidadPasajeros, @hora_UsuarioCreador, NULL, NULL)								
+	VALUES(@hora_FechaSalida, @hora_FechaLlegada, @tran_ID, @hora_CantidadClientes, @hora_UsuarioCreador, NULL, NULL)								
 END
 GO
 
@@ -331,13 +361,13 @@ CREATE OR ALTER PROCEDURE term.UDP_tbItinerarios_Update
 	@hora_FechaSalida			DATETIME,
 	@hora_FechaLlegada			DATETIME,
 	@tran_ID					INT,
-	@hora_CantidadPasajeros		INT
+	@hora_CantidadClientes		INT
 AS
 BEGIN
 	UPDATE 	term.tbHorarios
 	SET 	hora_FechaSalida =@hora_FechaSalida, 
 			hora_FechaLlegada =@hora_FechaLlegada,
-	  		hora_CantidadPasajeros =@hora_CantidadPasajeros,
+	  		hora_CantidadClientes =@hora_CantidadClientes,
 			hora_UsuarioModificador = @hora_UsuarioModificador,
 			hora_FechaModificacion = GETDATE()
 	WHERE hora_ID = @hora_ID					
@@ -455,10 +485,3 @@ GO
 /*###############  tbTerminal  ###############*/
 
 
-
-SELECT * FROM 
-CREATE OR ALTER PROCEDURE term.UDP_VW_tbClientes_VW
-AS
-BEGIN
-	SELECT * FROM tbClientes WHERE clie_Estado = 1
-END
