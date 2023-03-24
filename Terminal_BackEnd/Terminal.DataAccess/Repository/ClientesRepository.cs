@@ -22,8 +22,8 @@ namespace Terminal.DataAccess.Repository
 
             return db.Query<VW_tbClientes>(ScriptsDataBase.UDP_Clientes_Select, null, commandType: CommandType.StoredProcedure);
         }
-
-        public RequestStatus Insert(VW_tbClientes item)
+            
+        public RequestStatus Insert(tbClientes item)
         {
             using var db = new SqlConnection(TerminalContext.ConnectionString);
             var parametros = new DynamicParameters();
@@ -33,7 +33,7 @@ namespace Terminal.DataAccess.Repository
             parametros.Add("@clie_DNI", item.clie_DNI, DbType.String, ParameterDirection.Input);
             parametros.Add("@clie_Sexo", item.clie_Sexo, DbType.String, ParameterDirection.Input);
             parametros.Add("@clie_Telefono", item.clie_Telefono, DbType.String, ParameterDirection.Input);
-            parametros.Add("@clie_Email", item.clie_Telefono, DbType.String, ParameterDirection.Input);
+            parametros.Add("@clie_Email", item.clie_Email, DbType.String, ParameterDirection.Input);
             return db.QueryFirst<RequestStatus>(ScriptsDataBase.UDP_Clientes_Insert, parametros, commandType: CommandType.StoredProcedure);
         }
 

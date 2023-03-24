@@ -29,7 +29,7 @@ namespace Terminal.BusinessLogic.Services
                 return Enumerable.Empty<VW_tbClientes>();
             }
         }
-        public ServiceResult InsertarCliente(VW_tbClientes item)
+        public ServiceResult InsertarCliente(tbClientes item)
         {
             var result = new ServiceResult();
             try

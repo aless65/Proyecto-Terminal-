@@ -52,7 +52,7 @@ namespace Terminal.WebUI.Controllers
             using (var httpClient = new HttpClient())
             {
                 var content = new StringContent(JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json");
-                var response = await httpClient.PostAsync(_baseurl + "api/Cliente", content);
+                var response = await httpClient.PostAsync(_baseurl + "api/Cliente/Insertar", content);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -64,9 +64,6 @@ namespace Terminal.WebUI.Controllers
                 }
             }
         }
-
-
-
       
     }
 

@@ -32,10 +32,11 @@ namespace Terminal.API.Controllers
             return Ok(listado);
         }
 
-        [HttpPost]
-        public IActionResult Create(VW_tbClientes item)
+        [HttpPost("Insertar")]
+        public IActionResult Create(ClientesViewModel item)
         {
-            var listado = _terminalService.InsertarCliente(item);
+            var listadoMapeado = _mapper.Map<tbClientes>(item);
+            var listado = _terminalService.InsertarCliente(listadoMapeado);
             return Ok(listado);
         }
 

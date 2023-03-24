@@ -164,6 +164,11 @@ namespace Terminal.DataAccess.Context
 
                 entity.Property(e => e.clie_Nombres).HasMaxLength(200);
 
+                entity.Property(e => e.clie_Sexo)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength(true);
+
                 entity.Property(e => e.clie_Telefono)
                     .HasMaxLength(8)
                     .IsUnicode(false)
