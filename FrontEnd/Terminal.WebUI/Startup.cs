@@ -31,7 +31,7 @@ namespace Terminal.WebUI
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             var configuration = configurationBuilder.Build();
-            services.AddScoped<IService_API, Service_API>();
+            services.AddScoped<IService_API, ClienteService>();
             services.AddHttpClient();
 
 

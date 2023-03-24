@@ -12,11 +12,11 @@ using System.Net.Http;
 
 namespace Terminal.WebUI.Services
 {
-    public class Service_API: IService_API
+    public class ClienteService: IService_API
     {
         private static string _baseurl;
 
-        public Service_API()
+        public ClienteService()
         {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
             _baseurl = builder.GetSection("ApiSettings:BaseUrl").Value;

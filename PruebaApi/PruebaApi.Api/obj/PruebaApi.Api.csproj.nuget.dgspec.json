@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\PruebaApi.Api.csproj": {}
+    "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\PruebaApi.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\PruebaApi.Api.csproj": {
+    "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\PruebaApi.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\PruebaApi.Api.csproj",
+        "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\PruebaApi.Api.csproj",
         "projectName": "PruebaApi.Api",
-        "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\PruebaApi.Api.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\obj\\",
+        "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\PruebaApi.Api.csproj",
+        "packagesPath": "C:\\Users\\LAB01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj"
+              "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj"
               }
             }
           }
@@ -97,25 +93,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj": {
+    "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj",
         "projectName": "PruebaApi.BusinessLogic",
-        "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\LAB01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -129,11 +121,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj"
+              "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj"
               },
-              "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj": {
-                "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj"
+              "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj": {
+                "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj"
               }
             }
           }
@@ -162,25 +154,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj": {
+    "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj",
         "projectName": "PruebaApi.DataAccess",
-        "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\LAB01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -194,8 +182,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj": {
-                "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj"
+              "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj": {
+                "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj"
               }
             }
           }
@@ -238,25 +226,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj": {
+    "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj",
         "projectName": "PruebaApi.Entities",
-        "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\obj\\",
+        "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj",
+        "packagesPath": "C:\\Users\\LAB01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -296,7 +280,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
         }
       }
     }

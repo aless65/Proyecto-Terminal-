@@ -22,15 +22,16 @@ namespace PruebaApi.BusinessLogic.Services
             try
             {
                 var map = _tbClientesRepository.Insert(item);
-                if (map.CodeStatus > 0)
-                {
-                    return result.Ok(map);
-                }
-                else
-                {
-                    map.MessageStatus = (map.CodeStatus == 0) ? "404 Error de consulta" : map.MessageStatus;
-                    return result.Error(map);
-                }
+                return result.Ok(map);
+                //if (map.CodeStatus > 0)
+                //{
+
+                //}
+                //else
+                //{ 
+                //    map.MessageStatus = (map.CodeStatus == 0) ? "404 Error de consulta" : map.MessageStatus;
+                //    return result.Error(map);
+                //}
 
             }
             catch (Exception)
