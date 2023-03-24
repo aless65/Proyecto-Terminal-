@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6glJUABLVsqcuQdjqvGVTr/t/dzDgQ9DE6F9vQxQTRh43mDPvqVTS2b+pnxYpb+n24R30n1jyvuNfk7wwga1lA==",
+  "dgSpecHash": "T+HTbRk6gyMR0dhxoe0iVkaFE6PLo8aKFoEt/Z84OwEYdY9fizF9n9uyyuzXIUUHwm2+FvKmYk/m8eOdgJgmtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.API\\Terminal.API.csproj",
+  "projectFilePath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.API\\Terminal.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LAB01\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\LAB01\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

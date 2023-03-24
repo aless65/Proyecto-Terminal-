@@ -5780,11 +5780,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
       "projectName": "Terminal.BusinessLogic",
-      "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
+      "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\LAB01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\obj\\",
+      "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LAB01\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5801,8 +5801,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj"
+            "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj"
             }
           }
         }
@@ -5831,7 +5831,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
       }
     }
   }
