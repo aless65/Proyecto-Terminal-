@@ -32,6 +32,7 @@ namespace PruebaApi.Api
             services.BusinessLogic();
             services.AddAutoMapper(x => x.AddProfile<MappingProfileExtensions>(), AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers();
+            services.AddHttpClient();
             AddSwagger(services);
         }
 
