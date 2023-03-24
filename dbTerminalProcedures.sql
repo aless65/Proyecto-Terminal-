@@ -122,7 +122,9 @@ GO
 CREATE OR ALTER PROCEDURE term.UDP_VW_tbClientes_VW
 AS
 BEGIN
-	SELECT * FROM term.VW_tbClientes WHERE clie_Estado = 1
+	--SELECT * FROM term.VW_tbClientes WHERE clie_Estado = 1
+	SELECT * FROM term.tbClientes
+
 END
 GO
 
