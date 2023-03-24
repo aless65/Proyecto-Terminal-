@@ -1,13 +1,19 @@
 USE dbTerminal
 GO
 
+
+
 INSERT INTO gral.tbEstadosCiviles (estciv_Descripcion, estciv_Estado, estciv_UsuarioCreador, estciv_FechaCreacion, estciv_UsuarioModificador, estciv_FechaModificacion)
-VALUES	('Soltero(a)', '1', NULL, GETDATE(), NULL, GETDATE()),
-		('Casado(a)', '1', NULL, GETDATE(), NULL, GETDATE()),
-		('Divorciado(a)', '1', NULL, GETDATE(), NULL, GETDATE()),
-		('Viudo(a)', '1', NULL, GETDATE(), NULL, GETDATE()),
-		('Union Libre', '1', NULL, GETDATE(), NULL, GETDATE())
+VALUES	('Soltero(a)', '1', 1, GETDATE(), NULL, GETDATE()),
+		('Casado(a)', '1', 1, GETDATE(), NULL, GETDATE()),
+		('Divorciado(a)', '1', 1, GETDATE(), NULL, GETDATE()),
+		('Viudo(a)', '1', 1, GETDATE(), NULL, GETDATE()),
+		('Union Libre', '1', 1, GETDATE(), NULL, GETDATE())
 GO
+
+
+INSERT INTO gral.tbMetodosPago(pago_Descripcion, pago_UsuarioCreador, pago_UsuarioModificador, pago_FechaModificacion)
+VALUES ('Efectivo', 1, NULL, NULL)
 
 
 INSERT INTO gral.tbDepartamentos(dept_ID, dept_Descripcion, dept_Estado, dept_UsuarioCreador, dept_FechaCreacion, dept_UsuarioModificador, dept_FechaModificacion)
@@ -368,9 +374,130 @@ VALUES	('01','0101','La Ceiba', '1', NULL, GETDATE(), NULL, GETDATE()),
 GO
 
 
-INSERT INTO term.tbEmpleados(empl_PrimerNombre, empl_SegundoNombre, empl_PrimerApellido, empl_SegundoApellido, empl_DNI, empl_FechaNacimiento, empl_Sexo, empl_Telefono, carg_ID, estciv_ID, muni_ID, empl_Estado, empl_UsuarioCreador, empl_FechaCreacion, empl_UsuarioModificador, empl_FechaModificacion)
-VALUES ('ggggg', 'ggggg', 'ggggg', 'ggggg')
+INSERT INTO	term.tbCompania(comp_Nombre, muni_ID, comp_Direccion, comp_UsuarioCreador, comp_UsuarioModificador, comp_FechaModificacion)
+VALUES('Mazapan', '0501', 'Por la casa de Selvin XD', 1, NULL, NULL)
+
+
+INSERT INTO term.tbCargos(carg_Nombre, carg_UsuarioCreador, carg_UsuarioModificador, carg_FechaModificacion)
+VALUES ('Conductor(a)', 1, NULL, NULL)
+
+
+INSERT INTO term.tbTerminales(muni_ID, term_Nombre, term_DireccionExacta, term_CantidadTransportes, term_UsuarioCreador, term_UsuarioModificador, term_FechaModificacion)
+VALUES('0501', 'Terminal de San Pedro Sula', 'Salida a la Lima', 200, 1, NULL, NULL)
+
+
+INSERT INTO term.tbEmpleados(empl_PrimerNombre, empl_SegundoNombre, empl_PrimerApellido, empl_SegundoApellido, empl_DNI, empl_FechaNacimiento, empl_Sexo, empl_Telefono, carg_ID, estciv_ID, muni_ID, empl_UsuarioCreador, empl_UsuarioModificador, empl_FechaModificacion)
+VALUES ('Maria', 'Jose','Antonieta', 'De las nieves', '1234567891234', GETDATE(), 'F', '00000000', 1, 1, '0501', 1, NULL, NULL)
+
+DECLARE @PassEncrypt VARBINARY(MAX) = HASHBYTES('SHA2_512', 'AWSD')
+INSERT INTO acce.tbUsuarios(usua_Usuario, usua_Clave, usua_EsAdmin, empl_ID, usua_UsuarioCreador, usua_UsuarioModificador, usua_FechaModificacion)
+VALUES('AWSD', @PassEncrypt, 1, 1, 1, NULL, NULL)
 
 INSERT INTO term.tbClientes(clie_Nombres, clie_Apellidos, clie_DNI, clie_Sexo, clie_Telefono, 
 							clie_Email, clie_UsuarioCreador, clie_UsuarioModificador, clie_FechaModificacion)
-VALUES ('Calidonio', 'Panchamé', '0501199823432', 'M', '00000000', 'panchame@gmail.com', NULL, NULL, NULL)
+VALUES ('Calidonio', 'Panchamé', '0501199823555', 'M', '00000000', 'panchame@gmail.com', 1, NULL, NULL)
+
+
+INSERT INTO term.tbHorarios(hora_FechaSalida, hora_FechaLlegada, hora_Origen, hora_Destino, hora_CantidadPasajeros, hora_UsuarioCreador, hora_UsuarioModificador, hora_FechaModificacion)
+VALUES(GETDATE(), GETDATE(), '05', '08', 100, 1, NULL, NULL)
+
+
+INSERT INTO term.tbBoletos(bole_Fecha, term_ID, comp_ID, empl_ID, clie_ID, hora_ID, pago_ID, bole_Precio, bole_UsuarioCreador, bole_UsuarioModificador, bole_FechaModificacion)
+VALUES (GETDATE(), 1, 1, 1, 1, 1, 1, 200, 1, NULL, NULL)
+
+
+
+
+
+/********************** CONSTRAINTS ***********************/
+
+ALTER TABLE gral.tbEstadosCiviles
+ADD CONSTRAINT FK_gral_tbEstadosCiviles_estciv_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (estciv_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_gral_tbEstadosCiviles_estciv_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (estciv_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)	
+GO
+
+
+ALTER TABLE gral.tbDepartamentos
+ADD CONSTRAINT FK_gral_tbDepartamentos_dept_UsuarioCreador_acce_tbUsuarios_usua_ID	FOREIGN KEY (dept_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_gral_tbDepartamentos_dept_UsuarioModificador_acce_tbUsuarios_usua_ID	FOREIGN KEY (dept_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO	
+
+
+ALTER TABLE gral.tbMunicipios
+ADD CONSTRAINT FK_gral_tbMunicipios_muni_UsuarioCreador_acce_tbUsuarios_usua_ID	FOREIGN KEY (muni_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_gral_tbMunicipios_muni_UsuarioModificador_acce_tbUsuarios_usua_ID	FOREIGN KEY (muni_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE gral.tbMetodosPago
+ADD CONSTRAINT FK_gral_tbMetodosPago_pago_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (pago_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_gral_tbMetodosPago_pago_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (pago_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE acce.tbRoles
+ADD CONSTRAINT FK_acce_tbRoles_role_UsuarioCreador_tbUsuarios_usua_ID FOREIGN KEY (role_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_acce_tbRoles_role_UsuarioModificador_tbUsuarios_usua_ID FOREIGN KEY (role_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+ALTER TABLE acce.tbPantallas
+ADD CONSTRAINT FK_acce_tbPantallas_pant_UsuarioCreador_tbUsuarios_usua_ID FOREIGN KEY (pant_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_acce_tbPantallas_pant_UsuarioModificador_tbUsuarios_usua_ID FOREIGN KEY (pant_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE acce.tbRolesXPantallas
+ADD CONSTRAINT FK_acce_tbRolesXPantallas_tbUsuarios_usua_ID FOREIGN KEY (usua_ID) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_acce_tbRolesXPantallas_roleXpant_UsuarioCreador_tbUsuarios_usua_ID FOREIGN KEY (roleXpant_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_acce_tbRolesXPantallas_roleXpant_UsuarioModificador_tbUsuarios_usua_ID FOREIGN KEY (roleXpant_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+
+ALTER TABLE acce.tbUsuarios
+ADD CONSTRAINT FK_acce_tbUsuarios_term_tbEmpleados_empl_ID FOREIGN KEY (empl_ID) REFERENCES term.tbEmpleados (empl_ID),
+	CONSTRAINT FK_acce_tbUsuarios_usua_UsuarioCreador_tbUsuarios_usua_ID FOREIGN KEY (usua_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_acce_tbUsuarios_usua_UsuarioModificador_tbUsuarios_usua_ID FOREIGN KEY (usua_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE term.tbCargos
+ADD CONSTRAINT FK_term_tbCargos_carg_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (carg_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_term_tbCargos_carg_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (carg_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE term.tbEmpleados
+ADD CONSTRAINT FK_term_tbEmpleados_empl_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (empl_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_term_tbEmpleados_empl_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (empl_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE term.tbTerminales
+ADD CONSTRAINT FK_term_tbTerminales_term_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (term_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_term_tbTerminales_term_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (term_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE term.tbCompania
+ADD CONSTRAINT FK_term_tbCompania_comp_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (comp_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_term_tbCompania_comp_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (comp_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE term.tbClientes
+ADD CONSTRAINT FK_term_tbClientes_clie_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (clie_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_term_tbClientes_clie_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (clie_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE term.tbHorarios
+ADD CONSTRAINT FK_term_tbHorarios_hora_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (hora_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_term_tbHorarios_hora_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (hora_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
+
+ALTER TABLE term.tbBoletos
+ADD CONSTRAINT FK_term_tbBoletos_bole_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (bole_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_term_tbBoletos_bole_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (bole_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Terminal.WebUI.Models;
 
@@ -29,7 +30,7 @@ namespace Terminal.WebUI.Controllers
 
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync(_baseurl + "api/Clientes");
+                var response = await httpClient.GetAsync(_baseurl + "api/Cliente");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -39,6 +40,34 @@ namespace Terminal.WebUI.Controllers
                 return View(listado);
             }
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
+        public async Task<IActionResult> Create(ClientesModel cliente)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json");
+                var response = await httpClient.PostAsync(_baseurl + "api/Cliente", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+        }
+
+
+
+      
     }
 
 }

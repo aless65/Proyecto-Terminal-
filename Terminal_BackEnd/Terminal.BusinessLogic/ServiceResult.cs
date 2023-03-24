@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Terminal.BusinessLogic
 {
-    class ServiceResult
+    public class ServiceResult
     {
 
 

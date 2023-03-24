@@ -214,7 +214,7 @@ GO
 
 -- CREACION DE TABLA tbCompa�ias
 CREATE TABLE term.tbCompania(
-	comp_ID						INT,
+	comp_ID						INT IDENTITY(1,1),
 	comp_Nombre					VARCHAR(200),
 	muni_ID						CHAR(4),
 	comp_Direccion				VARCHAR(300),
@@ -307,100 +307,6 @@ GO
 
 
 
-
-
-/********************** CONSTRAINTS ***********************/
-
-ALTER TABLE gral.tbEstadosCiviles
-ADD CONSTRAINT FK_gral_tbEstadosCiviles_estciv_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (estciv_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_gral_tbEstadosCiviles_estciv_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (estciv_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)	
-GO
-
-
-ALTER TABLE gral.tbDepartamentos
-ADD CONSTRAINT FK_gral_tbDepartamentos_dept_UsuarioCreador_acce_tbUsuarios_usua_ID	FOREIGN KEY (dept_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_gral_tbDepartamentos_dept_UsuarioModificador_acce_tbUsuarios_usua_ID	FOREIGN KEY (dept_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO	
-
-
-ALTER TABLE gral.tbMunicipios
-ADD CONSTRAINT FK_gral_tbMunicipios_muni_UsuarioCreador_acce_tbUsuarios_usua_ID	FOREIGN KEY (muni_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_gral_tbMunicipios_muni_UsuarioModificador_acce_tbUsuarios_usua_ID	FOREIGN KEY (muni_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE gral.tbMetodosPago
-ADD CONSTRAINT FK_gral_tbMetodosPago_pago_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (pago_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_gral_tbMetodosPago_pago_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (pago_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE acce.tbRoles
-ADD CONSTRAINT FK_acce_tbRoles_role_UsuarioCreador_tbUsuarios_usua_ID FOREIGN KEY (role_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_acce_tbRoles_role_UsuarioModificador_tbUsuarios_usua_ID FOREIGN KEY (role_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-ALTER TABLE acce.tbPantallas
-ADD CONSTRAINT FK_acce_tbPantallas_pant_UsuarioCreador_tbUsuarios_usua_ID FOREIGN KEY (pant_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_acce_tbPantallas_pant_UsuarioModificador_tbUsuarios_usua_ID FOREIGN KEY (pant_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE acce.tbRolesXPantallas
-ADD CONSTRAINT FK_acce_tbRolesXPantallas_tbUsuarios_usua_ID FOREIGN KEY (usua_ID) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_acce_tbRolesXPantallas_roleXpant_UsuarioCreador_tbUsuarios_usua_ID FOREIGN KEY (roleXpant_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_acce_tbRolesXPantallas_roleXpant_UsuarioModificador_tbUsuarios_usua_ID FOREIGN KEY (roleXpant_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-
-ALTER TABLE acce.tbUsuarios
-ADD CONSTRAINT FK_acce_tbUsuarios_term_tbEmpleados_empl_ID FOREIGN KEY (empl_ID) REFERENCES term.tbEmpleados (empl_ID),
-	CONSTRAINT FK_acce_tbUsuarios_usua_UsuarioCreador_tbUsuarios_usua_ID FOREIGN KEY (usua_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_acce_tbUsuarios_usua_UsuarioModificador_tbUsuarios_usua_ID FOREIGN KEY (usua_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE term.tbCargos
-ADD CONSTRAINT FK_term_tbCargos_carg_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (carg_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_term_tbCargos_carg_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (carg_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE term.tbEmpleados
-ADD CONSTRAINT FK_term_tbEmpleados_empl_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (empl_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_term_tbEmpleados_empl_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (empl_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE term.tbTerminales
-ADD CONSTRAINT FK_term_tbTerminales_term_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (term_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_term_tbTerminales_term_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (term_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE term.tbCompania
-ADD CONSTRAINT FK_term_tbCompania_comp_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (comp_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_term_tbCompania_comp_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (comp_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE term.tbClientes
-ADD CONSTRAINT FK_term_tbClientes_clie_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (clie_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_term_tbClientes_clie_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (clie_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE term.tbHorarios
-ADD CONSTRAINT FK_term_tbHorarios_hora_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (hora_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_term_tbHorarios_hora_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (hora_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
-
-
-ALTER TABLE term.tbBoletos
-ADD CONSTRAINT FK_term_tbBoletos_bole_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (bole_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
-	CONSTRAINT FK_term_tbBoletos_bole_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (bole_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
-GO
 
 
 

@@ -8,7 +8,7 @@ namespace Terminal.DataAccess.Repository
     {
         public U Find(int id);
         public IEnumerable<U> List();
-        public RequestStatus Insert(T item);
+        public RequestStatus Insert(U item);
         public RequestStatus Update(T item);
         public RequestStatus Delete(int id);
     }
