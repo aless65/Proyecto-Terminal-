@@ -23,7 +23,7 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var response = await _httpClient.GetAsync("https://localhost:44307/api/Clientes");
+            var response = await _httpClient.GetAsync("clientes");
             var content = await response.Content.ReadAsStringAsync();
             var user = JsonConvert.DeserializeObject<ClientesModel>(content);
 
