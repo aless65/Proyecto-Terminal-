@@ -7,27 +7,23 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Terminal.WebUI.Models;
+using Terminal.WebUI.Services;
 
 namespace Terminal.WebUI.Controllers
 {
     public class ClienteController : Controller
     {
-        private readonly HttpClient _httpClient;
-        private readonly IConfiguration _configuration;
+        private readonly IService_API _serviceApi;
 
-        public ClienteController(HttpClient httpClient, IConfiguration configuration)
+        public ClienteController(IService_API serviceApi)
         {
-            _httpClient = httpClient;
-            _configuration = configuration;
+            _serviceApi = serviceApi;
         }
 
         public async Task<IActionResult> Index()
         {
-            var response = await _httpClient.GetAsync("clientes");
-            var content = await response.Content.ReadAsStringAsync();
-            var user = JsonConvert.DeserializeObject<ClientesModel>(content);
-
-            return View(user);
+            List<ClientesModel> listado = await _serviceApi.List();
+            return View(listado);
         }
     }
 

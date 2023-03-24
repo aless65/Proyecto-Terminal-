@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Terminal.WebUI.Services;
 
 namespace Terminal.WebUI
 {
@@ -30,7 +31,7 @@ namespace Terminal.WebUI
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             var configuration = configurationBuilder.Build();
-
+            services.AddScoped<IService_API, Service_API>();
             services.AddHttpClient();
 
 
@@ -64,11 +65,6 @@ namespace Terminal.WebUI
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
-        public class ApiSettings
-        {
-            public string BaseUrl { get; set; }
-            public string ApiKey { get; set; }
         }
     }
 }
