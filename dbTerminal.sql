@@ -218,11 +218,11 @@ CREATE TABLE term.tbCompania(
 	comp_Nombre					VARCHAR(200),
 	muni_ID						CHAR(4),
 	comp_Direccion				VARCHAR(300),
-	term_Estado					INT DEFAULT 1,
-	term_UsuarioCreador			INT,
-	term_FechaCreacion			DATETIME DEFAULT GETDATE(),
-	term_UsuarioModificador		INT,
-	term_FechaModificacion		DATETIME,
+	comp_Estado					INT DEFAULT 1,
+	comp_UsuarioCreador			INT,
+	comp_FechaCreacion			DATETIME DEFAULT GETDATE(),
+	comp_UsuarioModificador		INT,
+	comp_FechaModificacion		DATETIME,
 
 	CONSTRAINT PK_term_tbCompania_comp_ID PRIMARY KEY (comp_ID)
 )
@@ -274,34 +274,35 @@ GO
 
 
 
+CREATE TABLE term.tbBoletos(
+	bole_ID						INT IDENTITY(1,1),
+	bole_Fecha					DATETIME DEFAULT GETDATE(),
+	term_ID						INT,
+	comp_ID						INT,
+	empl_ID						INT,
+	clie_ID						INT,
+	hora_ID						INT,
+	pago_ID						INT,
+	bole_Precio					NUMERIC(18,2),
+	bole_Estado					INT DEFAULT 1,
+	bole_UsuarioCreador			INT,
+	bole_FechaCreacion			DATETIME,
+	bole_UsuarioModificador		INT,
+	bole_FechaModificacion		DATETIME,
 
--- por mostrar en proyecto final 
---cargos , boletos, clientes, horarios, terminales
-
-SELECT * FROM term.tbClientes
+	CONSTRAINT PK_term_tbBoletos_bole_ID PRIMARY KEY (bole_ID),
+	CONSTRAINT FK_term_tbBoletos_tbTerminales_term_ID FOREIGN KEY (term_ID) REFERENCES term.tbTerminales (term_ID),
+	CONSTRAINT FK_term_tbBoletos_tbCompanias_comp_ID FOREIGN KEY (comp_ID) REFERENCES term.tbCompania (comp_ID),
+	CONSTRAINT FK_term_tbBoletos_tbEmpleados_empl_ID FOREIGN KEY (empl_ID) REFERENCES term.tbEmpleados (empl_ID),
+	CONSTRAINT FK_term_tbBoletos_tbClientes_clie_ID FOREIGN KEY (clie_ID) REFERENCES term.tbClientes (clie_ID),
+	CONSTRAINT FK_term_tbBoletos_tbHorarios_hora_ID FOREIGN KEY (hora_ID) REFERENCES term.tbHorarios (hora_ID),
+	CONSTRAINT FK_term_tbBoletos_gral_tbMetodosPago_pago_ID FOREIGN KEY (pago_ID) REFERENCES gral.tbMetodosPago (pago_ID),	
+)
 GO
 
 
-CREATE OR ALTER VIEW term.VW_tbClientes
-AS
-SELECT	clie_ID, 
-		clie_Nombres, 
-		clie_Apellidos,
-		CONCAT(clie_Nombres,  ' ', clie_Apellidos) AS clie_NombreCompleto,
-		clie_DNI,
-		clie_Telefono,
-		clie_Email,		
-		clie_Estado,
-		clie_UsuarioCreador,usr1.usua_Usuario AS clie_UsuarioCreador_Nombre,
-		clie_FechaCreacion,
-		clie_UsuarioModificador, usr2.usua_Usuario AS clie_UsuarioModificador_Nombre,
-		clie_FechaModificacion
-
-FROM term.tbClientes AS clie INNER JOIN acce.tbUsuarios AS usr1
-ON clie.clie_UsuarioCreador = usr1.usua_ID LEFT JOIN acce.tbUsuarios AS usr2
-ON clie.clie_UsuarioModificador = usr2.usua_ID
-
-
+-- por mostrar en proyecto final 
+--cargos , boletos, clientes, horarios, terminales
 
 
 
@@ -375,7 +376,7 @@ ADD CONSTRAINT FK_term_tbTerminales_term_UsuarioCreador_acce_tbUsuarios_usua_ID 
 GO
 
 
-ALTER TABLE term.Compania
+ALTER TABLE term.tbCompania
 ADD CONSTRAINT FK_term_tbCompania_comp_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (comp_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
 	CONSTRAINT FK_term_tbCompania_comp_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (comp_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
 GO
@@ -387,10 +388,17 @@ ADD CONSTRAINT FK_term_tbClientes_clie_UsuarioCreador_acce_tbUsuarios_usua_ID FO
 GO
 
 
-ALTER TABLE term.Horarios
+ALTER TABLE term.tbHorarios
 ADD CONSTRAINT FK_term_tbHorarios_hora_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (hora_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
 	CONSTRAINT FK_term_tbHorarios_hora_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (hora_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
 GO
+
+
+ALTER TABLE term.tbBoletos
+ADD CONSTRAINT FK_term_tbBoletos_bole_UsuarioCreador_acce_tbUsuarios_usua_ID FOREIGN KEY (bole_UsuarioCreador) REFERENCES acce.tbUsuarios (usua_ID),
+	CONSTRAINT FK_term_tbBoletos_bole_UsuarioModificador_acce_tbUsuarios_usua_ID FOREIGN KEY (bole_UsuarioModificador) REFERENCES acce.tbUsuarios (usua_ID)
+GO
+
 
 
 
