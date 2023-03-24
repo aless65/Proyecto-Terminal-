@@ -127,23 +127,6 @@ BEGIN
 
 END
 GO
-	
-
--------->	FIND
-CREATE OR ALTER PROCEDURE term.UDP_tbClientes_Find 
-@clie_ID INT
-AS
-BEGIN
-
-	SELECT clie_ID, clie_Nombres, clie_Apellidos, clie_NombreCompleto, clie_DNI, clie_Sexo, clie_Telefono, clie_Email, clie_Estado, clie_UsuarioCreador, clie_UsuarioCreador_Nombre, clie_FechaCreacion, clie_UsuarioModificador, clie_UsuarioModificador_Nombre, clie_FechaModificacion
-	FROM term.VW_tbClientes
-	WHERE clie_ID = @clie_ID
- 
-END
-GO
-
-
-
 
 -------->	CREATE	
 CREATE OR ALTER PROCEDURE term.UDP_tbClientes_Create
@@ -166,6 +149,19 @@ BEGIN
 	BEGIN CATCH
 		SELECT 0
 	END CATCH
+END
+GO
+
+-------->	FIND
+CREATE OR ALTER PROCEDURE term.UDP_tbClientes_Find 
+@clie_ID INT
+AS
+BEGIN
+
+	SELECT clie_ID, clie_Nombres, clie_Apellidos, clie_NombreCompleto, clie_DNI, clie_Sexo, clie_Telefono, clie_Email, clie_Estado, clie_UsuarioCreador, clie_UsuarioCreador_Nombre, clie_FechaCreacion, clie_UsuarioModificador, clie_UsuarioModificador_Nombre, clie_FechaModificacion
+	FROM term.VW_tbClientes
+	WHERE clie_ID = @clie_ID
+ 
 END
 GO
 
@@ -199,7 +195,6 @@ BEGIN
 	END CATCH
 END
 GO
-
 
 
 -------->	DELETE	

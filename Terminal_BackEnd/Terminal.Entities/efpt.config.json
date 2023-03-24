@@ -94,7 +94,7 @@
          "ObjectType": 3
       }
    ],
-   "UiHint": "DESKTOP-9N0AU71\\SERVIDORLOCAL.dbTerminal",
+   "UiHint": "DESKTOP-E6OAL4S\\SERVIDORLOCALDM.dbTerminal",
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,
    "UseDbContextSplitting": false,

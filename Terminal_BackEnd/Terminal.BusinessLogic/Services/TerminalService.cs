@@ -16,7 +16,7 @@ namespace Terminal.BusinessLogic.Services
             _clientesRepository = clientesRepository;
         }
 
-
+        #region Clientes
         public IEnumerable<VW_tbClientes> ListadoClientes()
         {
             try
@@ -29,7 +29,66 @@ namespace Terminal.BusinessLogic.Services
                 return Enumerable.Empty<VW_tbClientes>();
             }
         }
+        public ServiceResult InsertarCliente(tbClientes item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var map = _clientesRepository.Insert(item);
+                return result.Ok(map);
+                //if (map.CodeStatus > 0)
+                //{
 
+                //}
+                //else
+                //{ 
+                //    map.MessageStatus = (map.CodeStatus == 0) ? "404 Error de consulta" : map.MessageStatus;
+                //    return result.Error(map);
+                //}
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public VW_tbClientes BuscarCliente(int id)
+        {
+            try
+            {
+                return _clientesRepository.Find(id);
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
+        public RequestStatus BorrarCliente(int id)
+        {
+            try
+            {
+                return _clientesRepository.Delete(id);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public RequestStatus UpdateCliente(tbClientes clientes)
+        {
+            try
+            {
+                return _clientesRepository.Update(clientes);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        #endregion
 
         public VW_tbClientes BuscarCliente(int id)
         {

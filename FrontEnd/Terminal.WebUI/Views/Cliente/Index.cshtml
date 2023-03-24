@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a href="/Cliente/Create/">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -33,21 +33,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.clie_Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.clie_Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.clie_UsuarioCreador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.clie_FechaCreacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.clie_UsuarioModificador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.clie_FechaModificacion)
             </th>
             <th></th>
         </tr>
@@ -77,24 +62,10 @@
                 @Html.DisplayFor(modelItem => item.clie_Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.clie_Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.clie_UsuarioCreador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.clie_FechaCreacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.clie_UsuarioModificador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.clie_FechaModificacion)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @*@Html.ActionLink("Edit", "Edit", new {item.clie_ID}) |*@
+                <a asp-action="Edit" asp-route-id="@item.clie_ID" class="btn btn-warning">Editar</a>
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <a asp-action="Delete" asp-route-id="@item.clie_ID" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }

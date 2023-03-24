@@ -27,3 +27,4 @@ C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\PruebaApi\Prueba
 C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\PruebaApi\PruebaApi.Entities\obj\Debug\netcoreapp3.1\PruebaApi.Entities.csproj.CoreCompileInputs.cache
 C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\PruebaApi\PruebaApi.Entities\obj\Debug\netcoreapp3.1\PruebaApi.Entities.dll
 C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\PruebaApi\PruebaApi.Entities\obj\Debug\netcoreapp3.1\PruebaApi.Entities.pdb
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\PruebaApi\PruebaApi.Entities\obj\Debug\netcoreapp3.1\PruebaApi.Entities.csproj.AssemblyReference.cache

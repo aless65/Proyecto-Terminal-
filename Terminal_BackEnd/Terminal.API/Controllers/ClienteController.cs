@@ -32,7 +32,15 @@ namespace Terminal.API.Controllers
             return Ok(listado);
         }
 
-        [HttpGet("Cliente/Update/{id}")]
+        [HttpPost("Insertar")]
+        public IActionResult Create(ClientesViewModel item)
+        {
+            var listadoMapeado = _mapper.Map<tbClientes>(item);
+            var listado = _terminalService.InsertarCliente(listadoMapeado);
+            return Ok(listado);
+        }
+
+        [HttpGet("Cliente/Find/{id}")]
         public IActionResult Edit(int id)
         {
             var listado = _terminalService.BuscarCliente(id);
@@ -46,5 +54,13 @@ namespace Terminal.API.Controllers
             var Result = _terminalService.UpdateCliente(listado);
             return Ok(Result);
         }
+
+        [HttpPost("Cliente/Delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            var listado = _terminalService.BorrarCliente(id);
+            return Ok();
+        }
+
     }
 }
