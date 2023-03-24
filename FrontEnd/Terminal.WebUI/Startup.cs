@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Terminal.WebUI.Services;
 
 namespace Terminal.WebUI
 {
@@ -31,7 +30,6 @@ namespace Terminal.WebUI
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             var configuration = configurationBuilder.Build();
-            services.AddScoped<IService_API, ClienteService>();
             services.AddHttpClient();
 
 

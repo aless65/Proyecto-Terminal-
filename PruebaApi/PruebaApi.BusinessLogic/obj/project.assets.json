@@ -5776,24 +5776,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\daniz\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\LAB01\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj",
       "projectName": "PruebaApi.BusinessLogic",
-      "projectPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj",
-      "packagesPath": "C:\\Users\\daniz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\obj\\",
+      "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\PruebaApi.BusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\LAB01\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\daniz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\LAB01\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5807,11 +5802,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj"
+            "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.DataAccess\\PruebaApi.DataAccess.csproj"
             },
-            "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj": {
-              "projectPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj"
+            "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj": {
+              "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\PruebaApi\\PruebaApi.Entities\\PruebaApi.Entities.csproj"
             }
           }
         }
@@ -5840,7 +5835,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
       }
     }
   }
