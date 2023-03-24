@@ -12,6 +12,7 @@ namespace Terminal.API.Models
         public string clie_Apellidos { get; set; }
         public string clie_NombreCompleto { get; set; }
         public string clie_DNI { get; set; }
+        public string clie_Sexo { get; set; }
         public string clie_Telefono { get; set; }
         public string clie_Email { get; set; }
         public int? clie_Estado { get; set; }

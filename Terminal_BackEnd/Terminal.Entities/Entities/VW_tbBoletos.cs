@@ -34,7 +34,8 @@ namespace Terminal.Entities.Entities
         public string hora_Destino { get; set; }
         public int? pago_ID { get; set; }
         public string pago_Descripcion { get; set; }
-        public decimal? bole_Estado { get; set; }
+        public decimal? bole_Precio { get; set; }
+        public int? bole_Estado { get; set; }
         public int? bole_UsuarioCreador { get; set; }
         public string bole_UsuarioCreador_Nombre { get; set; }
         public DateTime? bole_FechaCreacion { get; set; }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\Terminal.WebUI.csproj": {}
+    "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\Terminal.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\Terminal.WebUI.csproj": {
+    "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\Terminal.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\Terminal.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\Terminal.WebUI.csproj",
         "projectName": "Terminal.WebUI",
-        "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\Terminal.WebUI.csproj",
+        "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\Terminal.WebUI.csproj",
         "packagesPath": "C:\\Users\\LAB01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\obj\\",
+        "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\FrontEnd\\Terminal.WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LAB01\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
         }
       }
     }

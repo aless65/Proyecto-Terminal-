@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fk6QrvnVmU6V4WXcUXzyNTCvsQPE0ow1CXXFpl62YlCObOHF+WLlBg/91cdBBnw7kETWCvbUpg6krnqOW5SxjQ==",
+  "dgSpecHash": "Z+OjFBla9WCUon6cy9lqjfJktMJCBbTzkfsktdPSmFlOLGEFOqVUoJh1MdfPb4J3pS9woWzbI52YZ/lrtsw93Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LAB01\\Documents\\GitHub\\Gen6Matutina\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
+  "projectFilePath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LAB01\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\LAB01\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

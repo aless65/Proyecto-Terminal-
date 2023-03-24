@@ -102,6 +102,7 @@ SELECT	clie_ID,
 		clie_Apellidos,
 		CONCAT(clie_Nombres,  ' ', clie_Apellidos) AS clie_NombreCompleto,
 		clie_DNI,
+		clie_Sexo,
 		clie_Telefono,
 		clie_Email,		
 		clie_Estado,
@@ -122,11 +123,26 @@ GO
 CREATE OR ALTER PROCEDURE term.UDP_VW_tbClientes_VW
 AS
 BEGIN
-	--SELECT * FROM term.VW_tbClientes WHERE clie_Estado = 1
-	SELECT * FROM term.tbClientes
+	SELECT * FROM term.VW_tbClientes WHERE clie_Estado = 1
 
 END
 GO
+	
+
+-------->	FIND
+CREATE OR ALTER PROCEDURE term.UDP_tbClientes_Find 
+@clie_ID INT
+AS
+BEGIN
+
+	SELECT clie_ID, clie_Nombres, clie_Apellidos, clie_NombreCompleto, clie_DNI, clie_Sexo, clie_Telefono, clie_Email, clie_Estado, clie_UsuarioCreador, clie_UsuarioCreador_Nombre, clie_FechaCreacion, clie_UsuarioModificador, clie_UsuarioModificador_Nombre, clie_FechaModificacion
+	FROM term.VW_tbClientes
+	WHERE clie_ID = @clie_ID
+ 
+END
+GO
+
+
 
 
 -------->	CREATE	
@@ -184,6 +200,8 @@ BEGIN
 END
 GO
 
+
+
 -------->	DELETE	
 CREATE OR ALTER PROCEDURE term.UDP_tbClientes_Delete
 @clie_ID INT
@@ -230,7 +248,7 @@ SELECT	hora_ID,
 FROM term.tbHorarios AS hora INNER JOIN gral.tbDepartamentos AS dept1
 ON hora.hora_Origen = dept1.dept_ID INNER JOIN gral.tbDepartamentos AS dept2
 ON hora.hora_Destino = dept2.dept_ID INNER JOIN acce.tbUsuarios AS usr1
-ON hora.hora_UsuarioCreador = usr1.usua_ID JOIN acce.tbUsuarios AS usr2
+ON hora.hora_UsuarioCreador = usr1.usua_ID LEFT JOIN acce.tbUsuarios AS usr2
 ON hora.hora_UsuarioModificador = usr2.usua_ID
 GO
 
@@ -455,7 +473,7 @@ AS
 			hora.hora_Destino,
 			bole.pago_ID,
 			pago.pago_Descripcion,
-			bole_Precio
+			bole_Precio,
 			bole_Estado,
 			bole_UsuarioCreador,
 			usr1.usua_Usuario AS bole_UsuarioCreador_Nombre,

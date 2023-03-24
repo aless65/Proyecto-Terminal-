@@ -50,13 +50,13 @@ namespace Terminal.DataAccess.Context
 
                 entity.ToView("VW_tbBoletos", "term");
 
-                entity.Property(e => e.bole_Estado).HasColumnType("numeric(18, 2)");
-
                 entity.Property(e => e.bole_Fecha).HasColumnType("datetime");
 
                 entity.Property(e => e.bole_FechaCreacion).HasColumnType("datetime");
 
                 entity.Property(e => e.bole_FechaModificacion).HasColumnType("datetime");
+
+                entity.Property(e => e.bole_Precio).HasColumnType("numeric(18, 2)");
 
                 entity.Property(e => e.bole_UsuarioCreador_Nombre).HasMaxLength(100);
 
@@ -163,6 +163,11 @@ namespace Terminal.DataAccess.Context
                     .HasMaxLength(401);
 
                 entity.Property(e => e.clie_Nombres).HasMaxLength(200);
+
+                entity.Property(e => e.clie_Sexo)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength(true);
 
                 entity.Property(e => e.clie_Telefono)
                     .HasMaxLength(8)
@@ -392,8 +397,6 @@ namespace Terminal.DataAccess.Context
                     .HasName("PK_term_tbCompania_comp_ID");
 
                 entity.ToTable("tbCompania", "term");
-
-                entity.Property(e => e.comp_ID).ValueGeneratedNever();
 
                 entity.Property(e => e.comp_Direccion)
                     .HasMaxLength(300)

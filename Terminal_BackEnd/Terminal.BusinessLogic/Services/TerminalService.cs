@@ -31,5 +31,17 @@ namespace Terminal.BusinessLogic.Services
         }
 
 
+        public VW_tbClientes BuscarCliente(int id)
+        {
+
+            return _clientesRepository.Find(id);
+
+        }
+
+        public RequestStatus UpdateCliente(tbClientes clientes)
+        {
+            return _clientesRepository.Update(clientes);
+        }
+
     }
 }
