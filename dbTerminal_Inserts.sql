@@ -367,3 +367,10 @@ VALUES	('01','0101','La Ceiba', '1', NULL, GETDATE(), NULL, GETDATE()),
 		('18', '1811', 'Yorito', '1', NULL, GETDATE(), NULL, GETDATE());
 GO
 
+
+INSERT INTO term.tbEmpleados(empl_PrimerNombre, empl_SegundoNombre, empl_PrimerApellido, empl_SegundoApellido, empl_DNI, empl_FechaNacimiento, empl_Sexo, empl_Telefono, carg_ID, estciv_ID, muni_ID, empl_Estado, empl_UsuarioCreador, empl_FechaCreacion, empl_UsuarioModificador, empl_FechaModificacion)
+VALUES ('ggggg', 'ggggg', 'ggggg', 'ggggg')
+
+INSERT INTO term.tbClientes(clie_Nombres, clie_Apellidos, clie_DNI, clie_Sexo, clie_Telefono, 
+							clie_Email, clie_UsuarioCreador, clie_UsuarioModificador, clie_FechaModificacion)
+VALUES ('Calidonio', 'Panchamé', '0501199823432', 'M', '00000000', 'panchame@gmail.com', NULL, NULL, NULL)
