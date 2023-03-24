@@ -1,6 +1,8 @@
 
 /*************************************** PROCEDURES *******************************/
-USE dbTerminal GO
+USE dbTerminal 
+GO
+
 
 
 
@@ -26,11 +28,11 @@ BEGIN
 	BEGIN TRY
 		INSERT INTO term.tbEmpleados	(empl_PrimerNombre, empl_SegundoNombre, empl_PrimerApellido, 
 										empl_SegundoApellido, empl_DNI, empl_FechaNacimiento, empl_Sexo, empl_Telefono, 
-										carg_ID, estciv_ID, muni_ID, empl_Estado, empl_UsuarioCreador, empl_FechaCreacion, 
+										carg_ID, estciv_ID, muni_ID, empl_UsuarioCreador, 
 										empl_UsuarioModificador, empl_FechaModificacion)
 
 		VALUES(@empl_PrimerNombre, @empl_SegundoNombre, @empl_PrimerApellido, @empl_SegundoApellido, @empl_DNI, 
-				@empl_FechaNacimiento, @empl_Sexo ,@empl_Telefono, @carg_ID ,@estciv_ID, @muni_ID, '1', @empl_UsuarioCreador, NULL, NULL);
+				@empl_FechaNacimiento, @empl_Sexo ,@empl_Telefono, @carg_ID ,@estciv_ID, @muni_ID, @empl_UsuarioCreador, NULL, NULL);
 		SELECT 1
 	END TRY
 	BEGIN CATCH
@@ -51,6 +53,7 @@ CREATE OR ALTER PROCEDURE term.UDP_tbEmpleados_Update
 	@empl_FechaNacimiento		DATE,
 	@empl_Sexo					CHAR(1),
 	@empl_Telefono				VARCHAR(8),
+	@carg_ID					INT,
 	@estciv_ID					INT,
 	@muni_ID					CHAR(4)
 AS
@@ -65,6 +68,7 @@ BEGIN
 				empl_FechaNacimiento = @empl_FechaNacimiento, 
 				empl_Sexo = @empl_Sexo, 
 				empl_Telefono = @empl_Telefono, 
+				carg_ID = @carg_ID,
 				estciv_ID = @estciv_ID, 
 				muni_ID = @muni_ID, 
 				empl_UsuarioModificador = @empl_UsuarioModificador, 
@@ -185,7 +189,7 @@ AS
 BEGIN
 BEGIN TRY
 
-	INSERT INTO gral.tbMetodosPago(pago_Descripcion, pago_Estado, pago_UsuarioCreador, 
+	INSERT INTO gral.tbMetodosPago(pago_Descripcion, pago_UsuarioCreador, 
 									pago_UsuarioModificador,pago_FechaModificacion)
 	VALUES (@pago_Descripcion, @pago_UsuarioCreador, NULL, NULL)
 	SELECT 1
@@ -360,7 +364,7 @@ GO
 
 /*###############  tbTerminal  ###############*/
 --------> CREATE
-GO
+
 CREATE OR ALTER PROCEDURE term.UDP_tbTerminal_Create
 @muni_ID					CHAR(4),
 @term_Nombre				VARCHAR(300),
@@ -395,10 +399,10 @@ SELECT 1
 	END CATCH
 
 END
-
+GO
 
 --------> UPDATE	
-GO
+
 CREATE OR ALTER PROCEDURE term.UDP_tbTerminal_Update
 @term_ID					INT,
 @muni_ID					CHAR(4),
@@ -427,9 +431,9 @@ UPDATE [term].[tbTerminales]
 	END CATCH
 
 END
-
---------> DELETE	
 GO
+--------> DELETE	
+
 CREATE OR ALTER PROCEDURE term.UDP_tbTerminal_DELETE
 @term_ID					INT,
 @term_UsuarioModificador	INT
@@ -454,11 +458,9 @@ END
 GO
 /*###############  tbTerminal  ###############*/
 
-
-
-SELECT * FROM 
 CREATE OR ALTER PROCEDURE term.UDP_VW_tbClientes_VW
 AS
 BEGIN
 	SELECT * FROM tbClientes WHERE clie_Estado = 1
 END
+GO
