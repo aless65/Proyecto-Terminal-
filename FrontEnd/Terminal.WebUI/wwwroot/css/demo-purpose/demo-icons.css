@@ -20,14 +20,10 @@
   text-decoration: inherit;
   text-align: center;
   vertical-align: middle;
-  filter: invert(100%);
 }
 
-.demo-pli {
-    filter: invert(100%);
-}
 .demo-pli-add:before {
-    content: "\e900";
+  content: "\e900";
 }
 
 .demo-pli-add-cart:before {
