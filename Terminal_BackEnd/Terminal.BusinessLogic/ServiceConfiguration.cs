@@ -13,6 +13,10 @@ namespace Terminal.BusinessLogic
         public static void DataAccess(this IServiceCollection service, string connectionString)
         {
             service.AddScoped<ClientesRepository>();
+            service.AddScoped<CargosRepository>();
+            service.AddScoped<TerminalesRepository>();
+            service.AddScoped<HorariosRepository>();
+            service.AddScoped<BoletosRepository>();
 
             TerminalContext.BuildConnectionString(connectionString);
         }

@@ -5775,19 +5775,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LAB01\\.nuget\\packages\\": {}
+    "C:\\Users\\daniz\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
       "projectName": "Terminal.BusinessLogic",
-      "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
-      "packagesPath": "C:\\Users\\LAB01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\obj\\",
+      "projectPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\daniz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\LAB01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\daniz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5801,8 +5806,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\LAB01\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj"
+            "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj"
             }
           }
         }
@@ -5831,7 +5836,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -52,6 +52,29 @@ END
 GO
 
 
+-------->	FIND
+CREATE OR ALTER PROCEDURE term.UDP_tbCargos_Find 
+@carg_ID INT
+AS
+BEGIN
+
+
+	SELECT carg_ID, 
+		carg_Nombre, 
+		carg_Estado, 
+		carg_UsuarioCreador,
+		carg_UsuarioCreador_Nombre,
+		carg_FechaCreacion,
+		carg_UsuarioModificador,
+		carg_UsuarioModificador_Nombre,
+		carg_FechaModificacion
+	FROM term.VW_tbCargos
+	WHERE carg_ID = @carg_ID
+
+END
+GO
+
+
 -------->	UPDATE
 CREATE OR ALTER PROCEDURE term.UDP_tbCargos_Update
 	@carg_UsuarioModificador	INT,
@@ -266,14 +289,47 @@ CREATE OR ALTER PROCEDURE term.UDP_tbHorarios_Create
 	@hora_CantidadPasajeros		INT
 AS
 BEGIN
-	INSERT INTO term.tbHorarios(hora_FechaSalida, hora_FechaLlegada, hora_Origen, hora_Destino, hora_CantidadPasajeros, hora_UsuarioCreador, hora_UsuarioModificador, hora_FechaModificacion)
-	VALUES(@hora_FechaSalida, @hora_FechaLlegada, @hora_Origen, @hora_Destino ,@hora_CantidadPasajeros, @hora_UsuarioCreador, NULL, NULL)								
+	BEGIN TRY
+
+		INSERT INTO term.tbHorarios(hora_FechaSalida, hora_FechaLlegada, hora_Origen, hora_Destino, hora_CantidadPasajeros, hora_UsuarioCreador, hora_UsuarioModificador, hora_FechaModificacion)
+		VALUES(@hora_FechaSalida, @hora_FechaLlegada, @hora_Origen, @hora_Destino ,@hora_CantidadPasajeros, @hora_UsuarioCreador, NULL, NULL)								
+		SELECT 1
+	END TRY
+	BEGIN CATCH
+		SELECT 0
+	END CATCH
 END
 GO
 
+
 --------> UPDATE
-CREATE OR ALTER PROCEDURE term.UDP_tbHorarios_Create
-	@hora_UsuarioModificador		INT,
+CREATE OR ALTER PROCEDURE term.UDP_VW_tbHorarios_Find
+	@hora_ID INT
+AS
+BEGIN
+	SELECT hora_ID,
+		hora_FechaSalida,
+		hora_FechaLlegada,
+		hora_Origen,
+		hora_Origen_DeptoNombre,
+		hora_Destino,
+		hora_Destino_DeptoNombre,
+		hora_CantidadPasajeros,
+		hora_Estado,
+		hora_UsuarioCreador,
+		hora_UsuarioCreador_Nombre,
+		hora_FechaCreacion,
+		hora_UsuarioModificador,
+		hora_UsuarioModificador_Nombre,
+		hora_FechaModificacion
+	FROM term.VW_tbHorarios WHERE hora_ID = @hora_ID
+END
+GO
+
+
+--------> UPDATE
+CREATE OR ALTER PROCEDURE term.UDP_tbHorarios_Update
+	@hora_UsuarioModificador	INT,
 	@hora_ID					INT,
 	@hora_FechaSalida			DATETIME,
 	@hora_FechaLlegada			DATETIME,
@@ -380,8 +436,34 @@ SELECT 1
 END
 GO
 
---------> UPDATE	
 
+--------> FIND
+CREATE OR ALTER PROCEDURE term.UDP_VW_tbTerminales_Find
+@term_ID INT
+AS
+BEGIN
+	SELECT	term_ID, 
+			muni_ID,
+			muni_Descripcion,
+			dept_ID,
+			dept_Descripcion,
+			term_Nombre,
+			term_DireccionExacta, 
+			term_CantidadTransportes, 
+			term_Estado, 
+			term_UsuarioCreador,
+			term_UsuarioCreador_Nombre,
+			term_FechaCreacion, 
+			term_UsuarioModificador, 
+			term_UsuarioModificador_Nombre,
+			term_FechaModificacion
+	FROM term.VW_tbTerminales 
+	WHERE term_ID = @term_ID
+END
+GO
+
+
+--------> UPDATE	
 CREATE OR ALTER PROCEDURE term.UDP_tbTerminales_Update
 @term_ID					INT,
 @muni_ID					CHAR(4),
@@ -398,7 +480,7 @@ UPDATE [term].[tbTerminales]
    SET [muni_ID] = @muni_ID
       ,[term_Nombre] = @term_Nombre
       ,[term_DireccionExacta] = @term_DireccionExacta
-      ,[term_CantidadTransportes] = @term_DireccionExacta
+      ,[term_CantidadTransportes] = @term_CantidadTransportes
       ,[term_UsuarioModificador] = @term_UsuarioModificador
       ,[term_FechaModificacion] = GETDATE()
  WHERE term_ID	= @term_ID	
@@ -413,9 +495,8 @@ END
 GO
 --------> DELETE	
 
-CREATE OR ALTER PROCEDURE term.UDP_tbTerminales_DELETE
-@term_ID					INT,
-@term_UsuarioModificador	INT
+CREATE OR ALTER PROCEDURE term.UDP_tbTerminales_Delete
+@term_ID					INT
 AS
 BEGIN
 
@@ -423,8 +504,6 @@ BEGIN TRY
 
 UPDATE [term].[tbTerminales]
    SET [term_Estado] = 0
-      ,[term_UsuarioModificador] = @term_ID
-      ,[term_FechaModificacion] = @term_UsuarioModificador
   WHERE term_ID	= @term_ID	
 
 
@@ -464,8 +543,10 @@ AS
 			bole.hora_ID,
 			hora.hora_FechaSalida,
 			hora.hora_Origen,
+			dept1.dept_Descripcion AS bole_hora_Origen_Nombre,
 			hora.hora_FechaLlegada,
 			hora.hora_Destino,
+			dept2.dept_Descripcion AS bole_hora_Destino_Nombre,
 			bole.pago_ID,
 			pago.pago_Descripcion,
 			bole_Precio,
@@ -485,7 +566,9 @@ AS
 	ON bole.hora_ID = hora.hora_ID INNER JOIN gral.tbMetodosPago AS pago
 	ON bole.pago_ID = pago.pago_ID INNER JOIN acce.tbUsuarios AS usr1
 	ON bole.bole_UsuarioCreador = usr1.usua_ID LEFT JOIN acce.tbUsuarios AS usr2
-	ON bole.bole_UsuarioModificador = usr2.usua_ID
+	ON bole.bole_UsuarioModificador = usr2.usua_ID INNER JOIN gral.tbDepartamentos AS dept1
+	ON hora.hora_Origen = dept1.dept_ID LEFT JOIN gral.tbDepartamentos AS dept2
+	ON hora.hora_Destino = dept2.dept_ID
 GO
 
 
@@ -500,7 +583,6 @@ GO
 --------> CREATE	
 CREATE OR ALTER PROCEDURE term.UDP_tbBoletos_Create
 	@bole_UsuarioCreador	INT,
-	@bole_Fecha				DATETIME,
 	@term_ID				INT,
 	@comp_ID				INT,
 	@empl_ID				INT,
@@ -511,9 +593,9 @@ CREATE OR ALTER PROCEDURE term.UDP_tbBoletos_Create
 AS
 BEGIN 
 	BEGIN TRY
-		INSERT INTO term.tbBoletos (bole_Fecha, term_ID, comp_ID, empl_ID, clie_ID, hora_ID, pago_ID,
+		INSERT INTO term.tbBoletos (term_ID, comp_ID, empl_ID, clie_ID, hora_ID, pago_ID,
 					bole_Precio, bole_UsuarioCreador, bole_UsuarioModificador, bole_FechaModificacion)
-		VALUES (@bole_Fecha, @term_ID, @comp_ID, @empl_ID, @clie_ID, @hora_ID, @pago_ID, @bole_Precio,
+		VALUES (@term_ID, @comp_ID, @empl_ID, @clie_ID, @hora_ID, @pago_ID, @bole_Precio,
 				@bole_UsuarioCreador, NULL, NULL)
 		SELECT 1
 	END TRY
@@ -524,11 +606,57 @@ END
 GO
 
 
+--------> FIND	
+CREATE OR ALTER PROCEDURE term.UDP_VW_tbBoletos_Find
+	@bole_ID INT
+AS
+BEGIN
+	SELECT bole_ID, 
+			bole_Fecha,
+			term_ID,
+			term_Nombre,
+			term_DireccionExacta,
+			comp_ID,
+			comp_Nombre,
+			comp_Direccion,
+			empl_ID,
+			empl_PrimerNombre,
+			empl_SegundoNombre,
+			empl_PrimerApellido,
+			empl_SegundoApellido,
+			bole_empl_Nombre_Completo,
+			clie_ID,
+			clie_Nombres,
+			clie_Apellidos,
+			bole_clie_Nombre_Completo,
+			clie_Sexo,
+			hora_ID,
+			hora_FechaSalida,
+			hora_Origen,
+			bole_hora_Origen_Nombre,
+			hora_FechaLlegada,
+			hora_Destino,
+			bole_hora_Destino_Nombre,
+			pago_ID,
+			pago_Descripcion,
+			bole_Precio,
+			bole_Estado,
+			bole_UsuarioCreador,
+			bole_UsuarioCreador_Nombre,
+			bole_FechaCreacion,
+			bole_UsuarioModificador,
+			bole_UsuarioModificador_Nombre,
+			bole_FechaModificacion
+	FROM term.VW_tbBoletos WHERE bole_ID = @bole_ID
+END
+GO
+
+
+
 --------> UPDATE	
 CREATE OR ALTER PROCEDURE term.UDP_tbBoletos_Update
 	@bole_UsuarioModificador	INT,
 	@bole_ID					INT ,
-	@bole_Fecha					DATETIME,
 	@term_ID					INT,
 	@comp_ID					INT,
 	@empl_ID					INT,
@@ -539,10 +667,8 @@ CREATE OR ALTER PROCEDURE term.UDP_tbBoletos_Update
 AS
 BEGIN 
 	BEGIN TRY
-
 		UPDATE term.tbBoletos 
-		SET bole_Fecha = @bole_Fecha, 
-		term_ID = @term_ID, 
+		SET term_ID = @term_ID, 
 		comp_ID = @comp_ID, 
 		empl_ID = @empl_ID, 
 		clie_ID = @clie_ID, 

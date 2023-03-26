@@ -13,6 +13,10 @@ namespace Terminal.API.Extensions
         public MappingProfileExtensions()
         {
             CreateMap<ClientesViewModel, tbClientes>().ReverseMap();
+            CreateMap<CargosViewModel, tbCargos>().ReverseMap();
+            CreateMap<TerminalesViewModel, tbTerminales>().ReverseMap();
+            CreateMap<HorariosViewModel, tbHorarios>().ReverseMap();
+            CreateMap<BoletosViewModel, tbBoletos>().ReverseMap();
         } 
     }
 }
