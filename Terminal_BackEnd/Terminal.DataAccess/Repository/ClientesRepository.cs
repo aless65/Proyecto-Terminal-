@@ -56,6 +56,7 @@ namespace Terminal.DataAccess.Repository
             return db.QueryFirst<RequestStatus>(ScriptsDataBase.UDP_Clientes_Update, parametros, commandType: CommandType.StoredProcedure);
         }
 
+
         public RequestStatus Delete(int id)
         {
             using var db = new SqlConnection(TerminalContext.ConnectionString);

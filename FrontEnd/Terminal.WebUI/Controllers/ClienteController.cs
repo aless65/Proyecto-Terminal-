@@ -64,6 +64,8 @@ namespace Terminal.WebUI.Controllers
                 }
             }
         }
+
+
         public async Task<IActionResult> Edit(int id)
         {
             using (var httpClient = new HttpClient())
@@ -101,6 +103,7 @@ namespace Terminal.WebUI.Controllers
                 }
             }
         }
+
 
         public async Task<IActionResult> Delete(int id)
         {

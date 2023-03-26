@@ -42,7 +42,7 @@ namespace Terminal.DataAccess.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Modern_Spanish_CI_AS");
+            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
             modelBuilder.Entity<VW_tbBoletos>(entity =>
             {
@@ -50,13 +50,13 @@ namespace Terminal.DataAccess.Context
 
                 entity.ToView("VW_tbBoletos", "term");
 
-                entity.Property(e => e.bole_Estado).HasColumnType("numeric(18, 2)");
-
                 entity.Property(e => e.bole_Fecha).HasColumnType("datetime");
 
                 entity.Property(e => e.bole_FechaCreacion).HasColumnType("datetime");
 
                 entity.Property(e => e.bole_FechaModificacion).HasColumnType("datetime");
+
+                entity.Property(e => e.bole_Precio).HasColumnType("numeric(18, 2)");
 
                 entity.Property(e => e.bole_UsuarioCreador_Nombre).HasMaxLength(100);
 
@@ -69,6 +69,10 @@ namespace Terminal.DataAccess.Context
                 entity.Property(e => e.bole_empl_Nombre_Completo)
                     .IsRequired()
                     .HasMaxLength(403);
+
+                entity.Property(e => e.bole_hora_Destino_Nombre).HasMaxLength(200);
+
+                entity.Property(e => e.bole_hora_Origen_Nombre).HasMaxLength(200);
 
                 entity.Property(e => e.clie_Apellidos).HasMaxLength(200);
 
@@ -397,8 +401,6 @@ namespace Terminal.DataAccess.Context
                     .HasName("PK_term_tbCompania_comp_ID");
 
                 entity.ToTable("tbCompania", "term");
-
-                entity.Property(e => e.comp_ID).ValueGeneratedNever();
 
                 entity.Property(e => e.comp_Direccion)
                     .HasMaxLength(300)
