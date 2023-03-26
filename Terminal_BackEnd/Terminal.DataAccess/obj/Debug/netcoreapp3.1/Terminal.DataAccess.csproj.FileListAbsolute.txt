@@ -37,3 +37,16 @@ C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.
 C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.csproj.CopyComplete
 C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.dll
 C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.pdb
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\bin\Debug\netcoreapp3.1\Terminal.DataAccess.deps.json
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\bin\Debug\netcoreapp3.1\Terminal.DataAccess.dll
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\bin\Debug\netcoreapp3.1\Terminal.DataAccess.pdb
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.AssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.csproj.CopyComplete
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.dll
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.DataAccess\obj\Debug\netcoreapp3.1\Terminal.DataAccess.pdb
