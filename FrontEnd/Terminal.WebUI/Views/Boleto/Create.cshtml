@@ -1,0 +1,69 @@
+﻿@model Terminal.WebUI.Models.BoletosViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>BoletosViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="term_ID" class="control-label"></label>
+                <input asp-for="term_ID" class="form-control" />
+                <span asp-validation-for="term_ID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="comp_ID" class="control-label"></label>
+                <input asp-for="comp_ID" class="form-control" />
+                <span asp-validation-for="comp_ID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="empl_ID" class="control-label"></label>
+                <input asp-for="empl_ID" class="form-control" />
+                <span asp-validation-for="empl_ID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="clie_ID" class="control-label"></label>
+                <input asp-for="clie_ID" class="form-control" />
+                <span asp-validation-for="clie_ID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="hora_ID" class="control-label"></label>
+                <input asp-for="hora_ID" class="form-control" />
+                <span asp-validation-for="hora_ID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="pago_ID" class="control-label"></label>
+                <input asp-for="pago_ID" class="form-control" />
+                <span asp-validation-for="pago_ID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="bole_Precio" class="control-label"></label>
+                <input asp-for="bole_Precio" class="form-control" />
+                <span asp-validation-for="bole_Precio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

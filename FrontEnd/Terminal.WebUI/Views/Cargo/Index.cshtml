@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Terminal.WebUI.Models.CargosViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header"><h1>Cargo</h1></div>
+    <div class="card-body">
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.carg_ID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.carg_Nombre)
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_Estado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_UsuarioCreador)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_UsuarioCreador_Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_FechaCreacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_UsuarioModificador)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_UsuarioModificador_Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.carg_FechaModificacion)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.carg_ID" class="btn btn-warning">Editar</a>
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            <a asp-action="Delete" asp-route-id="@item.carg_ID" class="btn btn-danger">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
