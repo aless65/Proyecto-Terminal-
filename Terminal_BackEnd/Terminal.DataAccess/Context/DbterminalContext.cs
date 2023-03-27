@@ -19,6 +19,8 @@ namespace Terminal.DataAccess.Context
         {
         }
 
+        public virtual DbSet<VW_graficaSexo> VW_graficaSexo { get; set; }
+        public virtual DbSet<VW_graficaViaje> VW_graficaViaje { get; set; }
         public virtual DbSet<VW_tbBoletos> VW_tbBoletos { get; set; }
         public virtual DbSet<VW_tbCargos> VW_tbCargos { get; set; }
         public virtual DbSet<VW_tbClientes> VW_tbClientes { get; set; }
@@ -42,7 +44,23 @@ namespace Terminal.DataAccess.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+            modelBuilder.HasAnnotation("Relational:Collation", "Modern_Spanish_CI_AS");
+
+            modelBuilder.Entity<VW_graficaSexo>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("VW_graficaSexo", "gral");
+            });
+
+            modelBuilder.Entity<VW_graficaViaje>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("VW_graficaViaje", "gral");
+
+                entity.Property(e => e.bole_hora_Destino_Nombre).HasMaxLength(200);
+            });
 
             modelBuilder.Entity<VW_tbBoletos>(entity =>
             {

@@ -395,15 +395,19 @@ VALUES('AWSD', @PassEncrypt, 1, 1, 1, NULL, NULL)
 
 INSERT INTO term.tbClientes(clie_Nombres, clie_Apellidos, clie_DNI, clie_Sexo, clie_Telefono, 
 							clie_Email, clie_UsuarioCreador, clie_UsuarioModificador, clie_FechaModificacion)
-VALUES ('Calidonio', 'Panchamé', '0501199823555', 'M', '00000000', 'panchame@gmail.com', 1, NULL, NULL)
-
+VALUES ('Calidonio', 'Panchamé', '46485554855', 'F', '00000000', 'panchame@gmail.com', 1, NULL, NULL),
+		('Sr.obama', 'Obama', '032343423442', 'F', '45877454', 'Sr.obama@gmail.com', 1, NULL, NULL)
 
 INSERT INTO term.tbHorarios(hora_FechaSalida, hora_FechaLlegada, hora_Origen, hora_Destino, hora_CantidadPasajeros, hora_UsuarioCreador, hora_UsuarioModificador, hora_FechaModificacion)
-VALUES(GETDATE(), GETDATE(), '05', '08', 100, 1, NULL, NULL)
+VALUES(GETDATE(), GETDATE(), '05', '07', 100, 1, NULL, NULL)
 
 
 INSERT INTO term.tbBoletos(bole_Fecha, term_ID, comp_ID, empl_ID, clie_ID, hora_ID, pago_ID, bole_Precio, bole_UsuarioCreador, bole_UsuarioModificador, bole_FechaModificacion)
-VALUES (GETDATE(), 1, 1, 1, 1, 1, 1, 200, 1, NULL, NULL)
+VALUES (GETDATE(), 1, 1, 1, 18, 2, 1, 200, 1, NULL, NULL) 
+
+
+select * from term.tbClientes
+ 
 
 
 

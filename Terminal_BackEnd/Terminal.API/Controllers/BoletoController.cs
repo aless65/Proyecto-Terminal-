@@ -63,5 +63,19 @@ namespace Terminal.API.Controllers
             return Ok();
         }
 
+
+        [HttpGet("LoadTrips")]
+        public IActionResult CargarViajes()
+        {
+            var listado = _terminalService.LoadTrips();
+            return Ok(listado);
+        }
+
+        [HttpGet("LoadSex")]
+        public IActionResult CargarSexo()
+        {
+            var listado = _terminalService.LoadSex();
+            return Ok(listado);
+        }
     }
 }

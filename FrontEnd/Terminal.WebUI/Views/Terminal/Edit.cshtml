@@ -73,39 +73,67 @@
     $(document).ready(function () {
 
 
-        $("#muni_ID").prop("disabled", true);
+        // Toma los elementos del DOM
+        var departamentoSelect = $('#dept_ID');
+        var municipioSelect = $('#muni_ID');
+        var Validacion = $("#validar");
 
-        $("#dept_ID").change(function () {
-            console.log("si cambio");
-            var departamentoId = $("#dept_ID").val();
-            $.getJSON('/Terminal/CargarMunicipios', { id: departamentoId })
+        // Deshabilita el select de municipios al inicio
+        municipioSelect.prop('disabled', true);
+        Validacion.hide();
 
-                .done(function (municipios) {
+        // Agrega un comentario explicando la función
+        // que se ejecuta cuando se cambia el departamento
+        departamentoSelect.change(function () {
+            console.log('Departamento cambiado');
+            var departamentoId = departamentoSelect.val();
 
-                    $("#muni_ID").prop("disabled", false);
-                    var municipiosSelect = $('#muni_ID');
-                    municipiosSelect.empty();
+            // Usa $.ajax en lugar de $.getJSON para manejar errores más fácilmente
+            $.ajax({
+                url: '/Terminal/CargarMunicipios',
+                data: { id: departamentoId },
+                dataType: 'json',
+                success: function (municipios) {
+                    // Habilita el select de municipios
+                    municipioSelect.prop('disabled', false);
 
-                    municipiosSelect.append($('<option>', {
+                    // Limpia el select de municipios
+                    municipioSelect.empty();
+
+                    // Agrega un valor predeterminado a la lista de opciones
+                    municipioSelect.append($('<option>', {
                         value: '',
                         text: '--Selecciona un municipio--'
                     }));
 
-                    $.each(municipios, function (index, item) {
-                        municipiosSelect.append($('<option>', {
-                            value: item.muni_ID,
-                            text: item.muni_Descripcion
+                    // Agrega las opciones de municipios
+                    $.each(municipios, function (index, municipio) {
+                        municipioSelect.append($('<option>', {
+                            value: municipio.muni_ID,
+                            text: municipio.muni_Descripcion
                         }));
-                        console.log(item.muni_ID)
+                        console.log(municipio.muni_ID);
                     });
 
-                })
+                    if (departamentoSelect.val() === "0") {
 
-                .fail(function (jqXHR, textStatus, errorThrown) {
+                        var muni_ddl = $("#muni_ID").val();
+                        muni_ddl = "";
+                        Validacion.show();
+
+                        console.log("Entro");
+
+                    } else {
+                        Validacion.hide();
+                        console.log(departamentoSelect.val());
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
                     console.error('Error al cargar los municipios: ' + textStatus + ', ' + errorThrown);
-                });
-
+                }
+            });
         });
+
     });
 
 </script>

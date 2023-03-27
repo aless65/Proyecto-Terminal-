@@ -69,5 +69,22 @@ namespace Terminal.DataAccess.Repository
             return db.QueryFirst<RequestStatus>(ScriptsDataBase.UDP_Boletos_Delete, parametros, commandType: CommandType.StoredProcedure);
 
         }
+
+        public IEnumerable<VW_graficaViaje> LoadTrips()
+        {
+            using var db = new SqlConnection(TerminalContext.ConnectionString);
+            var parametros = new DynamicParameters();
+            return db.Query<VW_graficaViaje>(ScriptsDataBase.UDP_GraficaViajes_Load, null, commandType: CommandType.StoredProcedure);
+
+        }
+
+        public IEnumerable<VW_graficaSexo> LoadSex()
+        {
+            using var db = new SqlConnection(TerminalContext.ConnectionString);
+            var parametros = new DynamicParameters();
+            return db.Query<VW_graficaSexo>(ScriptsDataBase.UDP_GraficaSexo_Load, null, commandType: CommandType.StoredProcedure);
+
+        }
+
     }
 }

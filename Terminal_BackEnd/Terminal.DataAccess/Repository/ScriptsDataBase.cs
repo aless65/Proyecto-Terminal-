@@ -57,5 +57,12 @@ namespace Terminal.DataAccess.Repository
         public static string UDP_CargarMunicipio_Load = "gral.UDP_CargarMunicipio_Load";
 
         #endregion
+
+        #region Graficas
+
+        public static string UDP_GraficaViajes_Load = "gral.UDP_GraficaViajes_Load";
+        public static string UDP_GraficaSexo_Load = "gral.UDP_GraficaSexo_Load";
+
+        #endregion
     }
 }

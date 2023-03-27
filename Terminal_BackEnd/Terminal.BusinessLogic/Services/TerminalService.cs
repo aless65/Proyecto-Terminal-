@@ -429,6 +429,31 @@ namespace Terminal.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<VW_graficaViaje> LoadTrips()
+        {
+            try
+            {
+                return _boletosRepository.LoadTrips();
+            }
+            catch (Exception e)
+            {
+
+                return Enumerable.Empty<VW_graficaViaje>();
+            }
+        }
+
+        public IEnumerable<VW_graficaSexo> LoadSex()
+        {
+            try
+            {
+                return _boletosRepository.LoadSex();
+            }
+            catch (Exception e)
+            {
+
+                return Enumerable.Empty<VW_graficaSexo>();
+            }
+        }
         #endregion
     }
 }

@@ -739,3 +739,39 @@ FROM [gral].[tbMunicipios]
 WHERE [dept_ID] = @dept_ID
 
 END
+
+GO
+CREATE OR ALTER VIEW gral.VW_graficaViaje
+AS
+SELECT bole_hora_Destino_Nombre, COUNT(hora_Destino) AS Cantidad
+    FROM term.VW_tbBoletos
+	group by hora_Destino,bole_hora_Destino_Nombre
+
+
+
+GO
+CREATE OR ALTER VIEW gral.VW_graficaSexo
+AS
+ 
+select	( SELECT COUNT(clie_Sexo) FROM term.VW_tbBoletos where clie_Sexo = 'M' group by clie_Sexo ) Masculino,
+			( SELECT COUNT(clie_Sexo) FROM term.VW_tbBoletos where clie_Sexo = 'F' group by clie_Sexo ) Femenino
+
+
+GO
+CREATE OR ALTER PROCEDURE gral.UDP_GraficaViajes_Load
+AS
+BEGIN
+ 
+	SELECT * from gral.VW_graficaViaje
+
+END 
+
+
+GO
+CREATE OR ALTER PROCEDURE gral.UDP_GraficaSexo_Load
+AS
+BEGIN
+
+SELECT * FROM gral.VW_graficaSexo
+		
+END 

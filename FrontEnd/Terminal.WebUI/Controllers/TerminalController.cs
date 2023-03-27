@@ -70,7 +70,7 @@ namespace Terminal.WebUI.Controllers
         public async Task<IActionResult> Create(TerminalesViewModel terminales)
         {
 
-            if (string.IsNullOrEmpty(terminales.dept_ID) || string.IsNullOrEmpty(terminales.muni_ID))
+            if (string.IsNullOrEmpty(terminales.dept_ID) || terminales.dept_ID == "0" || string.IsNullOrEmpty(terminales.muni_ID))
             {
 
                 if (string.IsNullOrEmpty(terminales.dept_ID))
@@ -110,6 +110,12 @@ namespace Terminal.WebUI.Controllers
                         var LoadDepartamento = await LoadDepartamentos.Content.ReadAsStringAsync();
                         var departamentos = JsonConvert.DeserializeObject<List<DepartamentoViewModel>>(LoadDepartamento);
                         ViewBag.dept_ID = new SelectList(departamentos, "dept_ID", "dept_Descripcion");
+
+                        var LoadMunicipios = await httpClient.GetAsync(_baseurl + $"api/Terminal/Terminal/FindMunicipio/{terminales.dept_ID}");
+
+                        var LoadMunicipio = await LoadMunicipios.Content.ReadAsStringAsync();
+                        var Municipio = JsonConvert.DeserializeObject<List<MunicipioViewModel>>(LoadMunicipio);
+                        ViewBag.muni_ID = new SelectList(Municipio, "muni_ID", "muni_Descripcion");
 
                     }
 
@@ -173,7 +179,7 @@ namespace Terminal.WebUI.Controllers
         }
 
         [HttpPost("/Termianl/Edit/{id}")]
-        public async Task<IActionResult> Update(TerminalesViewModel terminales)
+        public async Task<IActionResult> Edit(TerminalesViewModel terminales)
         {
 
             if (string.IsNullOrEmpty(terminales.dept_ID) || string.IsNullOrEmpty(terminales.muni_ID))
