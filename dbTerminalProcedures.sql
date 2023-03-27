@@ -704,3 +704,38 @@ BEGIN
 	END CATCH
 END
 GO
+
+
+go
+CREATE OR ALTER PROCEDURE gral.UDP_CargarDepartamento_Load 
+AS
+BEGIN
+SELECT [dept_ID], 
+[dept_Descripcion], 
+[dept_Estado], 
+[dept_UsuarioCreador],
+[dept_FechaCreacion], 
+[dept_UsuarioModificador],
+[dept_FechaModificacion]
+FROM [gral].[tbDepartamentos]
+WHERE dept_Estado = 1
+
+END
+
+go
+CREATE OR ALTER PROCEDURE gral.UDP_CargarMunicipio_Load 
+@dept_ID   varchar(10)
+AS
+BEGIN
+SELECT  [dept_ID], 
+		[muni_ID], 
+		[muni_Descripcion],
+		[muni_Estado],
+		[muni_UsuarioCreador],
+		[muni_FechaCreacion], 
+		[muni_UsuarioModificador],
+		[muni_FechaModificacion]
+FROM [gral].[tbMunicipios]
+WHERE [dept_ID] = @dept_ID
+
+END

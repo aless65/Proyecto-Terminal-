@@ -51,5 +51,11 @@ namespace Terminal.DataAccess.Repository
             public static string UDP_Boletos_Update = "term.UDP_tbBoletos_Update";
             public static string UDP_Boletos_Delete = "term.UDP_tbBoletos_Delete";
         #endregion
+
+        #region ddls
+        public static string UDP_CargarDepartamento_Load = "gral.UDP_CargarDepartamento_Load";
+        public static string UDP_CargarMunicipio_Load = "gral.UDP_CargarMunicipio_Load";
+
+        #endregion
     }
 }

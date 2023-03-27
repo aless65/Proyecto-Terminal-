@@ -14,10 +14,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.muni_Descripcion)
+                @Html.DisplayNameFor(model => model.term_ID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.dept_Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.muni_Descripcion)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.term_Nombre)
@@ -32,30 +35,46 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.muni_Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dept_Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.term_Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.term_DireccionExacta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.term_CantidadTransportes)
-            </td>
-            <td>
-                @*@Html.ActionLink("Edit", "Edit", new {item.clie_ID}) |*@
-                <a asp-action="Edit" asp-route-id="@item.term_ID" class="btn btn-warning">Editar</a>
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                <a asp-action="Delete" asp-route-id="@item.term_ID" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.term_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dept_Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.muni_Descripcion)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.term_Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.term_DireccionExacta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.term_CantidadTransportes)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new {item.clie_ID}) |*@
+                    <a asp-action="Edit" asp-route-id="@item.term_ID" class="btn btn-warning">Editar</a>
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    <button type="button" id="btnDelete" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="@("#exampleModalDelete-" + item.term_ID)" data-url="@Url.Action($"Delete/{item.term_ID}")">Eliminar</button>
+                    @await Html.PartialAsync("_TerminalView", item)
+ 
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+ 
+<script>
+    $("#btnDelete").click(function () {
+        console.log("le dio clic");
+        $('#exampleModalDelete').modal({ backdrop: 'static', keyboard: false })
+
+    });
+</script>

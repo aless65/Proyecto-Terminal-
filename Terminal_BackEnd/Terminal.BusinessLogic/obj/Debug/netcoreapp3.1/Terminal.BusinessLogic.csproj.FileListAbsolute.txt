@@ -58,3 +58,18 @@ C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Bus
 C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CopyComplete
 C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
 C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.deps.json
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.DataAccess.dll
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.DataAccess.pdb
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.AssemblyInfo.cs
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CopyComplete
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
