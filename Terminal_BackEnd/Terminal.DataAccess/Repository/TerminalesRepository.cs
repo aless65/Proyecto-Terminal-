@@ -65,5 +65,25 @@ namespace Terminal.DataAccess.Repository
 
         }
 
+
+
+        public IEnumerable<tbDepartamentos> LoadDepartamento()
+        {
+            using var db = new SqlConnection(TerminalContext.ConnectionString);
+            var parametros = new DynamicParameters();
+            return db.Query<tbDepartamentos>(ScriptsDataBase.UDP_CargarDepartamento_Load, null, commandType: CommandType.StoredProcedure);
+
+        }
+
+        public IEnumerable<tbMunicipios> LoadMunicipio(string id)
+        {
+            using var db = new SqlConnection(TerminalContext.ConnectionString);
+            var parametros = new DynamicParameters();
+            parametros.Add("@dept_ID", id, DbType.String, ParameterDirection.Input);
+
+            return db.Query<tbMunicipios>(ScriptsDataBase.UDP_CargarMunicipio_Load, parametros, commandType: CommandType.StoredProcedure);
+
+        }
+
     }
 }

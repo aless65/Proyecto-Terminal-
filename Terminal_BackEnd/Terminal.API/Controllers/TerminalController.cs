@@ -54,6 +54,15 @@ namespace Terminal.API.Controllers
             return Ok(Result);
         }
 
+
+        [HttpGet("Terminal/DeleteTerminal/{id}")]
+        public IActionResult DeleteT(int id)
+        {
+            var listado = _terminalService.BuscarTerminales(id);
+            return Ok(listado);
+        }
+
+
         [HttpPost("Terminal/Delete/{id}")]
         public IActionResult Delete(int id)
         {
@@ -61,5 +70,18 @@ namespace Terminal.API.Controllers
             return Ok();
         }
 
+        [HttpGet("LoadDepartamento")]
+        public IActionResult CargarDepartamentos()
+        {
+            var listado = _terminalService.LoadDepartamento();
+            return Ok(listado);
+        }
+
+        [HttpGet("Terminal/FindMunicipio/{id}")]
+        public IActionResult CargarMunicipios(string id)
+        {
+            var cargarmunicipios = _terminalService.LoadMunicipio(id);
+            return Ok(cargarmunicipios);
+        }
     }
 }

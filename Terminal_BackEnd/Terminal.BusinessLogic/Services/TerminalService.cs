@@ -400,5 +400,35 @@ namespace Terminal.BusinessLogic.Services
             }
         }
         #endregion
+
+        #region ddls
+
+        public IEnumerable<tbDepartamentos> LoadDepartamento()
+        {
+            try
+            {
+                return _terminalesRepository.LoadDepartamento();
+            }
+            catch (Exception e)
+            {
+
+                return Enumerable.Empty<tbDepartamentos>();
+            }
+        }
+
+        public IEnumerable<tbMunicipios> LoadMunicipio(string id)
+        {
+            try
+            {
+                return _terminalesRepository.LoadMunicipio(id);
+            }
+            catch (Exception e)
+            {
+
+                return Enumerable.Empty<tbMunicipios>();
+            }
+        }
+
+        #endregion
     }
 }

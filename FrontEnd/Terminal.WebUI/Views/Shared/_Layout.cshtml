@@ -31,6 +31,37 @@
     <link rel="stylesheet" href="~/css/toastr/toastr.min.css">
 
 
+    <style>
+
+        .modal-backdrop {
+            background-color: none;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 0vw;
+            height: 0vh;
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: #191c24;
+            background-clip: padding-box;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 0.3rem;
+            outline: 0;
+        }
+
+            .modal-content label {
+                padding-left: 10px;
+            }
+    </style>
+
 </head>
 <body class="jumping">
     @*@using Microsoft.AspNetCore.Http

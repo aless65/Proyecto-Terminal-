@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj": {}
+    "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj": {
+    "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
         "projectName": "Terminal.BusinessLogic",
-        "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\selvin almendarez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\selvin almendarez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +31,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj"
+              "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj"
               }
             }
           }
@@ -66,21 +65,20 @@
         }
       }
     },
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj": {
+    "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj",
         "projectName": "Terminal.DataAccess",
-        "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\Terminal.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\selvin almendarez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\selvin almendarez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,8 +92,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj": {
-                "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj"
+              "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj": {
+                "projectPath": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj"
               }
             }
           }
@@ -142,21 +140,20 @@
         }
       }
     },
-    "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj": {
+    "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj",
         "projectName": "Terminal.Entities",
-        "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\obj\\",
+        "projectPath": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\Terminal.Entities.csproj",
+        "packagesPath": "C:\\Users\\selvin almendarez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\selvin almendarez\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\selvin almendarez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
