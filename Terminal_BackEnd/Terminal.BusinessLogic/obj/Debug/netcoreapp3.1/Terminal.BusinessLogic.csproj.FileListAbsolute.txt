@@ -13,21 +13,6 @@ C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Bus
 C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CopyComplete
 C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
 C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.deps.json
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.DataAccess.dll
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.DataAccess.pdb
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.AssemblyReference.cache
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.AssemblyInfoInputs.cache
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.AssemblyInfo.cs
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CoreCompileInputs.cache
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CopyComplete
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
-C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
 C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.deps.json
 C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
 C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
@@ -73,3 +58,18 @@ C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\
 C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CopyComplete
 C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
 C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.deps.json
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.DataAccess.dll
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.DataAccess.pdb
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.AssemblyInfo.cs
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.csproj.CopyComplete
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.dll
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.BusinessLogic\obj\Debug\netcoreapp3.1\Terminal.BusinessLogic.pdb

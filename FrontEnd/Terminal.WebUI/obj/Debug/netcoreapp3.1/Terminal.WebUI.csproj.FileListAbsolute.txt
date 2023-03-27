@@ -364,3 +364,4 @@ C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\FrontEnd\Termina
 C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\FrontEnd\Terminal.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Terminal\Create.cshtml.g.cs
 C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\FrontEnd\Terminal.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Terminal\Edit.cshtml.g.cs
 C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\FrontEnd\Terminal.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Terminal\Index.cshtml.g.cs
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\FrontEnd\Terminal.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Terminal\_TerminalView.cshtml.g.cs
