@@ -10,9 +10,9 @@
     <div class="card-body">
 
         <p>
-            <a asp-action="Create">Create New</a>
+            <a onclick="AbrirModalCreate()" class="btn btn-outline-primary">Nuevo</a>
         </p>
-        <table class="table">
+        <table class="table" style="color: black;">
             <thead>
                 <tr>
                     <th>
@@ -35,30 +35,9 @@
                             @Html.DisplayFor(modelItem => item.carg_Nombre)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.carg_Estado)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carg_UsuarioCreador)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carg_UsuarioCreador_Nombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carg_FechaCreacion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carg_UsuarioModificador)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carg_UsuarioModificador_Nombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carg_FechaModificacion)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.carg_ID" class="btn btn-warning">Editar</a>
-                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                            <a asp-action="Delete" asp-route-id="@item.carg_ID" class="btn btn-danger">Delete</a>
+                            <a class="btn btn-outline-warning Editar"  data-id="@item.carg_ID" data-nombre="@item.carg_Nombre">Editar</a>
+                            <a class="btn btn-outline-dark">Detalles</a> |
+                            <a class="btn btn-outline-danger">Delete</a>
 
                         </td>
                     </tr>
@@ -68,3 +47,6 @@
 
     </div>
 </div>
+
+@Html.Partial("_Modal_Create", new Terminal.WebUI.Models.CargosViewModel())
+@Html.Partial("_Modal_Edit", new Terminal.WebUI.Models.CargosViewModel())
