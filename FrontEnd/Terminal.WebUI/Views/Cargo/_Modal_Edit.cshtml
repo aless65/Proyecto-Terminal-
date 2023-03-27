@@ -1,7 +1,7 @@
 ﻿@model Terminal.WebUI.Models.CargosViewModel
 <!-- Modal -->
 <div class="modal fade" id="_Modal_Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <form method="post" asp-controller="Departamento" asp-action="Edit" id="formEdit">
+    <form method="post" asp-controller="Cargo" asp-action="Update" id="formEdit">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -33,6 +33,8 @@
         var carg_Nombre_Edit = $(this).data("nombre");
         var carg_ID_Edit = $(this).data("id");
 
+        $("#lbl_carg_Nombre_EditError").attr('hidden', true);
+
         $("#carg_ID_Edit").val(carg_ID_Edit);
         $("#carg_Nombre_Edit").val(carg_Nombre_Edit);
 
@@ -43,8 +45,15 @@
 
 <script>
     function GuardarModalEdit() {
+        var x = true;
 
-   
+        if ($("#carg_Nombre_Edit").val() == null || $("#carg_Nombre_Edit").val() == "") {
+            x = false;
+            $("#lbl_carg_Nombre_EditError").attr('hidden', false);
+        } else {
+            $("#lbl_carg_Nombre_EditError").attr('hidden', true);
+            $("#formEdit").submit();
+        }
     };
 
 </script>

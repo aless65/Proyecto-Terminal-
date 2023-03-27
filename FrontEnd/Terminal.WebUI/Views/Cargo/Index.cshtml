@@ -35,9 +35,9 @@
                             @Html.DisplayFor(modelItem => item.carg_Nombre)
                         </td>
                         <td>
-                            <a class="btn btn-outline-warning Editar"  data-id="@item.carg_ID" data-nombre="@item.carg_Nombre">Editar</a>
+                            <a class="btn btn-outline-warning Editar" data-id="@item.carg_ID" data-nombre="@item.carg_Nombre">Editar</a>
                             <a class="btn btn-outline-dark">Detalles</a> |
-                            <a class="btn btn-outline-danger">Delete</a>
+                            <button class="btn btn-outline-danger" id="btnEliminar" onclick="eliminar('@item.carg_ID')">Eliminar</button>
 
                         </td>
                     </tr>
@@ -50,3 +50,4 @@
 
 @Html.Partial("_Modal_Create", new Terminal.WebUI.Models.CargosViewModel())
 @Html.Partial("_Modal_Edit", new Terminal.WebUI.Models.CargosViewModel())
+@Html.Partial("_Modal_Delete", new Terminal.WebUI.Models.CargosViewModel())
