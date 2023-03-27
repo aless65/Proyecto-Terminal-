@@ -39,7 +39,10 @@ namespace Terminal.WebUI.Controllers
                 }
                 return View(listado);
             }
+
         }
+
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -49,19 +52,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Create(ClientesModel cliente)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json");
-                var response = await httpClient.PostAsync(_baseurl + "api/Cliente/Insertar", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PostAsync(_baseurl + "api/Cliente/Insertar", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 
@@ -88,19 +98,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Update(ClientesModel cliente)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json");
-                var response = await httpClient.PutAsync(_baseurl + $"api/Cliente/Cliente/Update/{cliente.clie_ID}", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PutAsync(_baseurl + $"api/Cliente/Cliente/Update/{cliente.clie_ID}", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 
@@ -122,7 +139,5 @@ namespace Terminal.WebUI.Controllers
             }
         }
 
-
     }
-
 }

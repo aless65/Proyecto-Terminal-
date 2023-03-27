@@ -50,19 +50,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Create(TerminalesViewModel terminales)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(terminales), Encoding.UTF8, "application/json");
-                var response = await httpClient.PostAsync(_baseurl + "api/Terminal/Insertar", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(terminales), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PostAsync(_baseurl + "api/Terminal/Insertar", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 
@@ -87,19 +94,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Update(TerminalesViewModel terminales)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(terminales), Encoding.UTF8, "application/json");
-                var response = await httpClient.PutAsync(_baseurl + $"api/Terminal/Terminal/Update/{terminales.term_ID}", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(terminales), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PutAsync(_baseurl + $"api/Terminal/Terminal/Update/{terminales.term_ID}", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 

@@ -51,19 +51,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Create(HorariosViewModel horarios)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(horarios), Encoding.UTF8, "application/json");
-                var response = await httpClient.PostAsync(_baseurl + "api/Horario/Insertar", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(horarios), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PostAsync(_baseurl + "api/Horario/Insertar", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 
@@ -90,19 +97,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Update(HorariosViewModel horarios)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(horarios), Encoding.UTF8, "application/json");
-                var response = await httpClient.PutAsync(_baseurl + $"api/Horario/Horario/Update/{horarios.hora_ID}", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(horarios), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PutAsync(_baseurl + $"api/Horario/Horario/Update/{horarios.hora_ID}", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 

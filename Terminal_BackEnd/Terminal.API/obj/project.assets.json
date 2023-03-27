@@ -9140,23 +9140,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Chris\\.nuget\\packages\\": {},
+    "C:\\Users\\daniz\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.API\\Terminal.API.csproj",
+      "projectUniqueName": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.API\\Terminal.API.csproj",
       "projectName": "Terminal.API",
-      "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.API\\Terminal.API.csproj",
-      "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.API\\obj\\",
+      "projectPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.API\\Terminal.API.csproj",
+      "packagesPath": "C:\\Users\\daniz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\daniz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -9171,8 +9171,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\Chris\\Documents\\GitHub\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj"
+            "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\daniz\\OneDrive\\Documentos\\Proyecto-Terminal-\\Terminal_BackEnd\\Terminal.BusinessLogic\\Terminal.BusinessLogic.csproj"
             }
           }
         }
