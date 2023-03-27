@@ -49,19 +49,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Create(CargosViewModel cargos)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(cargos), Encoding.UTF8, "application/json");
-                var response = await httpClient.PostAsync(_baseurl + "api/Cargos/Insertar", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(cargos), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PostAsync(_baseurl + "api/Cargos/Insertar", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 
@@ -88,20 +95,28 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Update(CargosViewModel cargos)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(cargos), Encoding.UTF8, "application/json");
-                var response = await httpClient.PutAsync(_baseurl + $"api/Cargos/Cargo/Update/{cargos.carg_ID}", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(cargos), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PutAsync(_baseurl + $"api/Cargos/Cargo/Update/{cargos.carg_ID}", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    return View();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
             }
+            else
+            {
+                return View();
+            }
+
         }
 
 

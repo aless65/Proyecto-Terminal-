@@ -51,19 +51,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Create(BoletosViewModel boletosViewModel)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(boletosViewModel), Encoding.UTF8, "application/json");
-                var response = await httpClient.PostAsync(_baseurl + "api/Boleto/Insertar", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(boletosViewModel), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PostAsync(_baseurl + "api/Boleto/Insertar", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 
@@ -90,19 +97,26 @@ namespace Terminal.WebUI.Controllers
 
         public async Task<IActionResult> Update(BoletosViewModel boletos)
         {
-            using (var httpClient = new HttpClient())
+            if (ModelState.IsValid)
             {
-                var content = new StringContent(JsonConvert.SerializeObject(boletos), Encoding.UTF8, "application/json");
-                var response = await httpClient.PutAsync(_baseurl + $"api/Boleto/Boleto/Update/{boletos.bole_ID}", content);
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(boletos), Encoding.UTF8, "application/json");
+                    var response = await httpClient.PutAsync(_baseurl + $"api/Boleto/Boleto/Update/{boletos.bole_ID}", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
-                else
-                {
-                    return View();
-                }
+            }
+            else
+            {
+                return View();
             }
         }
 
