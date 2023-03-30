@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Terminal.WebUI.Models.BoletosViewModel>
+
+@{ ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+
+
+
+<div class="card">
+    <div class="card-body">
+        <h1>Boletos</h1>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="float-e-margins">
+                    <div class="ibox-title">
+                        <div class="ibox-tools">
+                            <div class="row">
+                                <div class="col-3">
+                                    <p><a asp-action="Create" class="btn btn-outline-info">Nuevo Registro</a></p>
+                                    <p><a asp-action="VistaPrevia" class="btn btn-outline-info">Vista Previa</a></p>
+                                        <div class="col-sm-6 text-right"><a class="btn btn-success" id="exportForm">Export page</a></div>
+                                   
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="table-responsive">
+                        <table class="table text-nowrap table-striped table-hover dataTables-example" id="DataTable">
+                            <thead class="bg-teal-400">
+                                <tr class="text-dark">
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_ID)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_clie_Nombre_Completo)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_hora_Origen_Nombre)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_hora_Destino_Nombre)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_Fecha)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.comp_Nombre)</th>
+                                    <th class="text-dark">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-dark">
+                                @foreach (var item in Model)
+                                {
+                    <tr role="row" data-id="@item.bole_ID" class="text-dark align-text-bottom">
+                        <td>@Html.DisplayFor(modelItem => item.bole_ID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.bole_clie_Nombre_Completo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.bole_hora_Origen_Nombre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.bole_hora_Destino_Nombre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.bole_Fecha)</td>
+                        <td>@Html.DisplayFor(modelItem => item.comp_Nombre)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.bole_ID" class="btn btn-outline-warning">Editar</a>
+                            <a asp-action="Details" asp-route-id="@item.bole_ID" class="btn btn-outline-dark">Detalles</a> |
+                            <button class="btn btn-outline-danger" id="btnEliminar" onclick="eliminar('@item.bole_ID')">Eliminar</button>
+                        </td>
+                    </tr>
+}
+                            </tbody>
+                            <tfoot class="bg-teal-400">
+                                <tr class="text-dark">
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_ID)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_clie_Nombre_Completo)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_hora_Origen_Nombre)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_hora_Destino_Nombre)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.bole_Fecha)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.comp_Nombre)</th>
+                                    <th class="text-dark">Acciones</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@Html.Partial("_Modal_Delete", new Terminal.WebUI.Models.BoletosViewModel())

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Terminal.WebUI.Models.TerminalesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h1>Terminales</h1>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="float-e-margins">
+                    <div class="ibox-title">
+                        <div class="ibox-tools">
+                            <div class="row">
+                                <div class="col-3">
+                                    <p><a asp-action="Create" class="btn btn-outline-info">Nuevo Registro</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table text-nowrap table-striped table-hover dataTables-example" id="DataTable">
+                            <thead class="bg-teal-400">
+                                <tr class="text-dark">
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.dept_Descripcion)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.muni_Descripcion)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.term_Nombre)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.term_DireccionExacta)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.term_CantidadTransportes)</th>
+                                    <th class="text-dark">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr role="row" data-id="@item.term_ID" class="text-dark align-text-bottom">
+                                        <td>@Html.DisplayFor(modelItem => item.dept_Descripcion)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.muni_Descripcion)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.term_Nombre)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.term_DireccionExacta)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.term_CantidadTransportes)</td>
+                                        <td>
+                                            <a asp-action="Details" asp-route-id="@item.term_ID" class="btn btn-outline-dark">Detalle</a> |
+                                            <a asp-action="Edit" asp-route-id="@item.term_ID" class="btn btn-outline-warning">Editar</a>
+                                            <button type="button" id="btnDelete" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="@("#exampleModalDelete-" + item.term_ID)" data-url="@Url.Action($"Delete/{item.term_ID}")">Eliminar</button>
+                                            @await Html.PartialAsync("_TerminalView", item)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot class="bg-teal-400">
+                                <tr class="text-dark">
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.dept_Descripcion)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.muni_Descripcion)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.term_Nombre)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.term_DireccionExacta)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.term_CantidadTransportes)</th>
+                                    <th class="text-dark">Acciones</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#btnDelete").click(function () {
+        console.log("le dio clic");
+        $('#exampleModalDelete').modal({ backdrop: 'static', keyboard: false })
+
+    });
+</script>

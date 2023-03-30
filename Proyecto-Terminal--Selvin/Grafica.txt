@@ -1,0 +1,311 @@
+// sql 
+
+vistas que hacen conteo de lo que se nesecita graficar, y procedimiento almacenado llamando la vista
+
+GO
+CREATE OR ALTER VIEW gral.VW_graficaViaje
+AS
+SELECT bole_hora_Destino_Nombre, COUNT(hora_Destino) AS Cantidad
+    FROM term.VW_tbBoletos
+	group by hora_Destino,bole_hora_Destino_Nombre
+
+
+
+GO
+CREATE OR ALTER VIEW gral.VW_graficaSexo
+AS
+ 
+select	( SELECT COUNT(clie_Sexo) FROM term.VW_tbBoletos where clie_Sexo = 'M' group by clie_Sexo ) Masculino,
+			( SELECT COUNT(clie_Sexo) FROM term.VW_tbBoletos where clie_Sexo = 'F' group by clie_Sexo ) Femenino
+
+
+GO
+CREATE OR ALTER PROCEDURE gral.UDP_GraficaViajes_Load
+AS
+BEGIN
+ 
+	SELECT * from gral.VW_graficaViaje
+
+END 
+
+
+GO
+CREATE OR ALTER PROCEDURE gral.UDP_GraficaSexo_Load
+AS
+BEGIN
+
+SELECT * FROM gral.VW_graficaSexo
+		
+END 
+
+
+// en el repositorio llamos los procedimientos 
+
+public IEnumerable<VW_graficaViaje> LoadTrips()
+        {
+            using var db = new SqlConnection(TerminalContext.ConnectionString);
+            var parametros = new DynamicParameters();
+            return db.Query<VW_graficaViaje>(ScriptsDataBase.UDP_GraficaViajes_Load, null, commandType: CommandType.StoredProcedure);
+
+        }
+
+        public IEnumerable<VW_graficaSexo> LoadSex()
+        {
+            using var db = new SqlConnection(TerminalContext.ConnectionString);
+            var parametros = new DynamicParameters();
+            return db.Query<VW_graficaSexo>(ScriptsDataBase.UDP_GraficaSexo_Load, null, commandType: CommandType.StoredProcedure);
+
+        }
+
+
+// luego lo llamo a el squema
+
+public IEnumerable<VW_graficaViaje> LoadTrips()
+        {
+            try
+            {
+                return _boletosRepository.LoadTrips();
+            }
+            catch (Exception e)
+            {
+
+                return Enumerable.Empty<VW_graficaViaje>();
+            }
+        }
+
+        public IEnumerable<VW_graficaSexo> LoadSex()
+        {
+            try
+            {
+                return _boletosRepository.LoadSex();
+            }
+            catch (Exception e)
+            {
+
+                return Enumerable.Empty<VW_graficaSexo>();
+            }
+        }
+
+
+// luego al controlador 
+
+        [HttpGet("LoadTrips")]
+        public IActionResult CargarViajes()
+        {
+            var listado = _terminalService.LoadTrips();
+            return Ok(listado);
+        }
+
+        [HttpGet("LoadSex")]
+        public IActionResult CargarSexo()
+        {
+            var listado = _terminalService.LoadSex();
+            return Ok(listado);
+        }
+
+
+// ojo todo esto en el back end (por si se te pasa por alto tienes que utilizar pawer tool para meter las nuevas vistas de las graficas y hacerles un ModelView)
+
+//en el front end en un controlador pones los siguientes metodos
+public async Task<IActionResult> GraficaViajes()
+        {
+
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(_baseurl + $"api/Boleto/LoadTrips");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var Grafica = JsonConvert.DeserializeObject<List<GraficaViajesViewModel>>(content);
+
+                    return Json(Grafica);
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+
+                }
+            }
+
+        }
+
+        public async Task<IActionResult> GraficaSexo()
+        {
+
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(_baseurl + $"api/Boleto/LoadSex");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var Grafica = JsonConvert.DeserializeObject<List<GraficaSexoViewModel>>(content);
+
+                    return Json(Grafica);
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+
+                }
+            }
+
+        }
+
+
+
+// despues en una vista pegas lo sigueinte
+<div class="row">
+
+        <div class="col-sm-6">
+
+            <h1>Ejemplo 1 - Gráfica de líneas</h1>
+            <canvas id="grafica"></canvas>
+
+        </div>
+
+        <div class="col-sm-6" style="max-width: 500px">
+
+            <h1>Ejemplo 7 - Gráfica con estilos</h1>
+
+            <canvas id="graficapai"></canvas>
+        </div>
+    </div>
+
+
+//ahora viene el js XD 
+
+//este es de la grafica normal//
+$(document).ready(function () {
+
+    const $grafica = document.querySelector("#grafica");
+    var Departamento = [];
+    var Cantidad = [];
+
+
+    $.ajax({
+        url: '/Boleto/GraficaViajes',
+        data: "",
+        dataType: 'json',
+        success: function (Grafica) {
+
+            //Declaracion de los arrys
+            var i = 0;
+            // Agrega las opciones de municipios
+            $.each(Grafica, function (index, GraficaV) {
+                i++;
+                Departamento.push(GraficaV.bole_hora_Destino_Nombre); // los ingreso al arreglo
+                Cantidad.push(GraficaV.cantidad);
+
+            });
+
+            //Grafica
+            
+            var datosVentas2020 = {
+                label: "Los departamento que mas se Viajan  ",
+                data: Cantidad, // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo
+                borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
+                borderWidth: 1,// Ancho del borde
+            };
+            new Chart($grafica, {
+                type: 'bar',// Tipo de gráfica
+                data: {
+                    labels: Departamento, // el arreglo con los departamentos
+                    datasets: [
+                        datosVentas2020, // el arreglo con los datos de cada departametno
+                        // Aquí más datos...
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                    },
+                }
+            });
+
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error('Error al cargar : ' + textStatus + ', ' + errorThrown);
+        }
+    });
+
+   
+     
+})
+
+// el de pai // 
+
+$(document).ready(function () {
+
+    const $grafica = document.querySelector("#graficapai");
+    const etiquetas = ["Mujer", "Hombre"]
+    const Cantidad = [];
+
+
+    $.ajax({
+        url: '/Boleto/GraficaSexo',
+        data: "",
+        dataType: 'json',
+        success: function (Grafica) {
+
+            //Declaracion de los arrys
+            var i = 0;
+            // Agrega las opciones de municipios
+            $.each(Grafica, function (index, GraficaS) {
+                i++;
+                Cantidad.push(GraficaS.femenino);
+                Cantidad.push(GraficaS.masculino);
+
+                console.log(GraficaS.femenino);
+            });
+
+            //Grafica
+
+            const datosIngresos = {
+                data: Cantidad , // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+                // Ahora debería haber tantos background colors como datos, es decir, para este ejemplo, 4
+                backgroundColor: [
+                    'rgba(163,221,203,0.2)',
+                    'rgba(232,233,161,0.2)',
+                    'rgba(230,181,102,0.2)',
+                    'rgba(229,112,126,0.2)',
+                ],// Color de fondo
+                borderColor: [
+                    'rgba(163,221,203,1)',
+                    'rgba(232,233,161,1)',
+                    'rgba(230,181,102,1)',
+                    'rgba(229,112,126,1)',
+                ],// Color del borde
+                borderWidth: 1,// Ancho del borde
+            };
+            new Chart($grafica, {
+                type: 'pie',// Tipo de gráfica. Puede ser dougnhut o pie
+                data: {
+                    labels: etiquetas,
+                    datasets: [
+                        datosIngresos,
+                        // Aquí más datos...
+                    ]
+                },
+            });
+
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error('Error al cargar : ' + textStatus + ', ' + errorThrown);
+        }
+    });
+
+});
+
+
+y eso es todo :)
+
+recuerda cambiarle la direcion de los cotroladores

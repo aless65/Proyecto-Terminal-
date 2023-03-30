@@ -1,0 +1,129 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "DbterminalContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Entities",
+   "ProjectRootNamespace": "Terminal.Entities",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "Tables": [
+      {
+         "Name": "[acce].[tbPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[acce].[tbRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[acce].[tbRolesXPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[acce].[tbUsuarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[tbDepartamentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[tbEstadosCiviles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[tbMetodosPago]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[tbMunicipios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbBoletos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbCargos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbClientes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbCompania]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbEmpleados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbHorarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[term].[tbTerminales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[gral].[VW_graficaSexo]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[gral].[VW_graficaViaje]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[term].[VW_tbBoletos]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[term].[VW_tbBoletos2]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[term].[VW_tbCargos]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[term].[VW_tbClientes]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[term].[VW_tbEmpleados]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[term].[VW_tbHorarios]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[term].[VW_tbTerminales]",
+         "ObjectType": 3
+      }
+   ],
+   "UiHint": "DESKTOP-4VGT370.dbTerminal",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

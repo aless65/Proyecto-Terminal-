@@ -1,0 +1,140 @@
+﻿@model Terminal.WebUI.Models.TerminalesViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>TerminalesViewModel</h4>
+<hr />
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="term_ID" hidden="hidden" class="form-control" />
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label">Departamentos</label>
+                <select asp-for="dept_ID" id="dept_ID" class="form-control" asp-items="ViewBag.dept_Id">
+                    <option value=""> -- Seleccione un Departamento -- </option>
+                </select>
+                <h7 style="color:red">@Html.ValidationMessage("ValidacionDepartamento") </h7>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label asp-for="muni_ID" class="control-label"></label>
+                @*<input asp-for="muni_ID" class="form-control" hidden="hidden"/>*@
+
+                <select asp-for="muni_ID" class="form-control" asp-items="ViewBag.muni_ID"></select>
+
+                <span asp-validation-for="muni_ID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label asp-for="term_Nombre" class="control-label"></label>
+                <input asp-for="term_Nombre" class="form-control" />
+                <span asp-validation-for="term_Nombre" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label asp-for="term_DireccionExacta" class="control-label"></label>
+                <input asp-for="term_DireccionExacta" class="form-control" />
+                <span asp-validation-for="term_DireccionExacta" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label asp-for="term_CantidadTransportes" class="control-label"></label>
+                <input asp-for="term_CantidadTransportes" class="form-control" />
+                <span asp-validation-for="term_CantidadTransportes" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Crear" class="btn btn-primary" />
+        <a class="btn btn-danger" asp-action="Index">Cancelar</a>
+    </div>
+</form>
+
+<script></script>
+<script>
+
+
+
+    $(document).ready(function () {
+
+
+        // Toma los elementos del DOM
+        var departamentoSelect = $('#dept_ID');
+        var municipioSelect = $('#muni_ID');
+        var Validacion = $("#validar");
+
+        // Deshabilita el select de municipios al inicio
+        municipioSelect.prop('disabled', true);
+        Validacion.hide();
+
+        // Agrega un comentario explicando la función
+        // que se ejecuta cuando se cambia el departamento
+        departamentoSelect.change(function () {
+            console.log('Departamento cambiado');
+            var departamentoId = departamentoSelect.val();
+
+            // Usa $.ajax en lugar de $.getJSON para manejar errores más fácilmente
+            $.ajax({
+                url: '/Terminal/CargarMunicipios',
+                data: { id: departamentoId },
+                dataType: 'json',
+                success: function (municipios) {
+                    // Habilita el select de municipios
+                    municipioSelect.prop('disabled', false);
+
+                    // Limpia el select de municipios
+                    municipioSelect.empty();
+
+                    // Agrega un valor predeterminado a la lista de opciones
+                    municipioSelect.append($('<option>', {
+                        value: '',
+                        text: '--Selecciona un municipio--'
+                    }));
+
+                    // Agrega las opciones de municipios
+                    $.each(municipios, function (index, municipio) {
+                        municipioSelect.append($('<option>', {
+                            value: municipio.muni_ID,
+                            text: municipio.muni_Descripcion
+                        }));
+                        console.log(municipio.muni_ID);
+                    });
+
+                    if (departamentoSelect.val() === "0") {
+
+                        var muni_ddl = $("#muni_ID").val();
+                        muni_ddl = "";
+                        Validacion.show();
+
+                        console.log("Entro");
+
+                    } else {
+                        Validacion.hide();
+                        console.log(departamentoSelect.val());
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error('Error al cargar los municipios: ' + textStatus + ', ' + errorThrown);
+                }
+            });
+        });
+
+    });
+
+</script>
+

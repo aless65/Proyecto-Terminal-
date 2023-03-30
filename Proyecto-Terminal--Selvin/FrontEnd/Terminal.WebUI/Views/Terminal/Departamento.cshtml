@@ -1,0 +1,157 @@
+﻿@model IEnumerable<Terminal.WebUI.Models.DepartamentoViewModel>
+
+@{
+    ViewData["Title"] = "Departamento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/examples/libs/jspdf.umd.js"></script>
+<script src="~/examples/mitubachi-normal.js"></script>
+<script src="~/examples/libs/faker.min.js"></script>
+<script src="~/dist/jspdf.plugin.autotable.js"></script>
+
+<h1>Departamento</h1>
+
+
+
+<div class="card">
+    <div class="card-body">
+        <h1>Boletos</h1>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="float-e-margins">
+                    <div class="ibox-title">
+                        <div class="ibox-tools">
+                            <div class="col-12">
+
+                                <div class="row">
+
+                                    <div class="col-1"> </div>
+                                    <div class="col-10" style="text-align:center"> <iframe id="pdf-preview" width="700px" height="600px"></iframe></div>
+                                    <div class="col-1"> </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <iframe id="pdf-preview" width="700px" height="600px"></iframe>
+                    <table class="table text-nowrap table-striped table-hover dataTables-example" id="DataTable" hidden="hidden">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.dept_ID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.dept_Descripcion)
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dept_ID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dept_Descripcion)
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    if (!window.jsPDF) window.jsPDF = window.jspdf.jsPDF
+
+    //boton exporta
+    $(document).ready(function () {
+        // Obtener la tabla por su id
+        var tabla = $('#DataTable');
+
+        // Obtener los encabezados de la tabla
+        var encabezados = tabla.find('th').map(function (index, element) {
+            // Obtener solo las primeras 5 columnas
+            if (index <= 5) {
+                return $(element).text();
+            }
+        }).get();
+
+        // Obtener los datos de la tabla
+        var datos = tabla.find('tbody tr').map(function () {
+            var fila = $(this);
+            var celdas = fila.find('td').map(function () {
+                return $(this).text();
+            }).get();
+            return [celdas]; // Se envuelve el arreglo de celdas dentro de otro arreglo
+        }).get();
+
+        // Crear el objeto de configuración para autoTable
+        var config = {
+            head: [encabezados],
+            body: datos,
+            startY: 70,
+            didDrawPage: function (data) {
+                // Establecer el margen superior de la tabla en cada página
+                data.settings.margin.top = 70;
+
+                ///reyeno
+                var img = new Image();
+                img.src = 'https://cdn.pixabay.com/photo/2015/08/23/09/22/banner-902589_1280.jpg';
+                data.doc.addImage(img, 'JPEG', data.settings.margin.left, 10, 190, 50);
+
+
+                // Establecer la posición de inicio de la tabla en cada página
+                data.startY = data.settings.margin.top + 50; // Altura de la imagen
+            },
+            didParseCell: function (data) {
+                // Agregar la imagen en la primera celda de la primera fila
+                if (data.section === 'head' && data.row.index === 0 && data.cell.index === 0) {
+                    var img = new Image();
+                    img.src = 'https://cdn.pixabay.com/photo/2015/08/23/09/22/banner-902589_1280.jpg';
+                    var imgData = getBase64Image(img);
+                    data.cell.styles.fillColor = '#FFFFFF';
+                    data.cell.styles.textColor = '#000000';
+                    data.cell.styles.fontSize = 15;
+                    data.cell.styles.cellPadding = 10;
+                    data.cell.styles.overflow = 'linebreak';
+                    data.cell.contentWidth = 190;
+                    data.cell.text = '';
+                    data.cell.raw = imgData;
+                }
+            }
+        };
+
+        // Crear el PDF con autoTable
+        var pdf = new jsPDF();
+        pdf.autoTable(config);
+
+        // Obtener la URL del objeto Blob y establecerla como src del iframe
+        var pdfBlob = pdf.output('blob');
+        var pdfUrl = URL.createObjectURL(pdfBlob);
+        $('#pdf-preview').attr('src', pdfUrl);
+    });
+
+    // Función para convertir la imagen en base64
+    function getBase64Image(img) {
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        var dataURL = canvas.toDataURL("image/jpeg");
+        return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+    }
+
+
+</script>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Terminal.WebUI.Models.ClientesModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-body">
+        <h1>Clientes</h1>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="float-e-margins">
+                    <div class="ibox-title">
+                        <div class="ibox-tools">
+                            <div class="row">
+                                <div class="col-3">
+                                    <p><a asp-action="Create" class="btn btn-outline-info">Nuevo Registro</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table text-nowrap table-striped table-hover dataTables-example" id="DataTable">
+                            <thead class="bg-teal-400">
+                                <tr class="text-dark">
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_ID)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Nombres)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Apellidos)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_DNI)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Sexo)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Telefono)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Email)</th>
+                                    <th class="text-dark">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr role="row" data-id="@item.clie_ID" class="text-dark align-text-bottom">
+                                        <td>@Html.DisplayFor(modelItem => item.clie_ID)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.clie_Nombres)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.clie_Apellidos)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.clie_DNI)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.clie_Sexo)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.clie_Telefono)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.clie_Email)</td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.clie_ID" class="btn btn-outline-warning">Editar</a>
+                                            <a asp-action="Details" asp-route-id="@item.clie_ID" class="btn btn-outline-dark">Detalles</a> |
+                                            <button class="btn btn-outline-danger" id="btnEliminar" onclick="eliminar('@item.clie_ID')">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot class="bg-teal-400">
+                                <tr class="text-dark">
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_ID)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Nombres)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Apellidos)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_DNI)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Sexo)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Telefono)</th>
+                                    <th class="text-dark">@Html.DisplayNameFor(model => model.clie_Email)</th>
+                                    <th class="text-dark">Acciones</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_Modal_Delete", new Terminal.WebUI.Models.ClientesModel())

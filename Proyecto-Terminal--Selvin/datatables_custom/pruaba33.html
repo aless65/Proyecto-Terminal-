@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte con DataTable y jsPDF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-dkbXS3xPkbgtRHbO99Stw3eOZ2r/vM08Cv1zgOyOx+rlzvn9YsJoc0ecWlJcFes1Z+OLzJ+pO/Q2fBafDLTAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+
+
+
+    <style>
+        .modal-body {
+            text-align: center;
+        }
+
+        .modal-body canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Reporte con DataTable y jsPDF</h1>
+    <table id="my-table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo electrónico</th>
+                <th>Teléfono</th>
+                <th>País</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john.doe@example.com</td>
+                <td>1234567890</td>
+                <td>Estados Unidos</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>Doe</td>
+                <td>jane.doe@example.com</td>
+                <td>0987654321</td>
+                <td>Canadá</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="preview-button">Vista previa</button>
+    <button id="export-pdf-button">Exportar a PDF</button>
+
+    <!-- Modal para la vista previa -->
+    <div class="modal fade" id="preview-modal" tabindex="-1" aria-labelledby="preview-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preview-modal-label">Vista previa del reporte</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Aquí se mostrará la imagen capturada por html2canvas -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Inicializa DataTable
+            $('#my-table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'pdfHtml5'
+                ]
+            });
+
+            // Agrega evento "click" al botón de vista previa
+            $('#preview-button').click(function () {
+                // Captura la imagen de la tabla con html2canvas
+                html2canvas(document.querySelector("#my-table")).then(function (canvas) {
+                    // Muestra la imagen en un modal
+                    $('#preview-modal .modal-body').html(canvas);
+                    $('#preview-modal').modal('show');
+                });
+            });
+
+            // Agrega evento "click" al botón de exportar a PDF
+            $('#export-pdf-button').click(function () {
+                // Genera el archivo PDF con jsPDF
+                var doc = new jsPDF();
+                doc.autoTable({
+                    html: '#my-table',
+                    theme: 'grid'
+                });
+                doc.save('reporte.pdf');
+            });
+        });
+    </script>
+</body>
+
+</html>

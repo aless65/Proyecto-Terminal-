@@ -1,0 +1,79 @@
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.deps.json
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.AssemblyReference.cache
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfoInputs.cache
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfo.cs
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.CoreCompileInputs.cache
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.deps.json
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.AssemblyReference.cache
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfoInputs.cache
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfo.cs
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.CoreCompileInputs.cache
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\daniz\OneDrive\Documentos\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.deps.json
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfoInputs.cache
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\Chris\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.deps.json
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.AssemblyReference.cache
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfoInputs.cache
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfo.cs
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.CoreCompileInputs.cache
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\selvin almendarez\Documents\GitHub\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.deps.json
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfoInputs.cache
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfo.cs
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.CoreCompileInputs.cache
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Documents\GitHub\Gen6Matutina\Proyecto-Terminal-\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.deps.json
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.AssemblyReference.cache
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfoInputs.cache
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfo.cs
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.CoreCompileInputs.cache
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.deps.json
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.AssemblyReference.cache
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfoInputs.cache
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfo.cs
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.CoreCompileInputs.cache
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\selvin almendarez\Desktop\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.deps.json
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\bin\Debug\netcoreapp3.1\Terminal.Entities.pdb
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.AssemblyReference.cache
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfoInputs.cache
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.AssemblyInfo.cs
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.csproj.CoreCompileInputs.cache
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.dll
+C:\Users\LAB01\Desktop\Todos\Proyecto-Terminal--Selvin\Terminal_BackEnd\Terminal.Entities\obj\Debug\netcoreapp3.1\Terminal.Entities.pdb
